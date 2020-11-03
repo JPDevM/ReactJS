@@ -9,7 +9,7 @@ let productsList = [
 
 function Products () {
 	return (
-		<React.Fragment>
+		<React.Fragment> {/* Siempre exporta un único objeto ya sea una etiqueta HTML o React.Fragment */}
 			<h2>Listado de productos</h2>
 			<section>
 				{
