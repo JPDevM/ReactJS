@@ -9,15 +9,16 @@ let user = {
 	lastName: 'Doe'
 };
 
+
 function App () {
 	return (
 		<React.Fragment>
-			<Navbar/>
+			<Navbar/>  {/* Renderiza el componente Navbar */}
 			<h1 className="text">¿Qué es JSX?</h1>
 			<h2>Hoy nos visita {user.name}</h2>
 			<p>JSX = Javascript extended markup</p>
 			<hr/>
-			<Products/>
+			<Products/> {/* Renderiza el componente Products */}
 		</React.Fragment>
 	)  
 }
