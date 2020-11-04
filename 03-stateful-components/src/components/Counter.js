@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// clases es una forma antigua de hacerlo. Ahora se usan funciones. Ver bien la direferencia
 class Counter extends Component {
 	constructor () {
 		super();
