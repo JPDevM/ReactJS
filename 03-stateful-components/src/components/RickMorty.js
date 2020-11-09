@@ -3,6 +3,7 @@ import React,  {useState, useEffect} from 'react';
 function RickMorty () {
 	const [characters, setCharacters] = useState([]);
 
+	// ejemplo llamados a las APIS
 	useEffect(function () {
 		fetch('https://rickandmortyapi.com/api/character')
 			.then(response => response.json())
