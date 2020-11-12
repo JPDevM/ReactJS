@@ -1,0 +1,42 @@
+.movie-box {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+.movie-box:hover .movie-box__info {
+	transform: translateY(0);
+}
+
+.movie-box img {
+	width: 100% !important;
+}
+
+.movie-box__info {
+	position: absolute;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	left: 0;
+	bottom: 0;
+	padding: 10px 15px;
+	color: #ffffff;
+	transform: translateY(100%);
+	transition: 320ms;
+}
+
+.movie-box__info h2 {
+	font-size: 1em;
+	margin: 0;
+}
+
+.movie-box__info p {
+	font-size: 0.7em;
+	margin: 0;
+}
+
+@media (min-width: 576px) {
+	.movie-box img {
+		height: 100% !important;
+		width: auto !important;
+	}
+}
