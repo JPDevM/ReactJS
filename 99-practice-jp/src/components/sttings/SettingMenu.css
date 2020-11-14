@@ -1,0 +1,23 @@
+/* Setting Styles */
+.bg-dark-light {
+  background-color: #171717;
+}
+
+.border-setting-top {
+  border: 0px;
+  border-radius: 0px;
+  border-top: 1px solid lightslategray;
+}
+
+.border-setting-bottom {
+  border-bottom: 1px solid lightslategray;
+}
+
+.custom-control-imput {
+  right: 0px;
+}
+
+#previewCard {
+  background-color: blue;
+  border-radius: 0.2em;
+}

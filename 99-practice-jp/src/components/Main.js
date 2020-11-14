@@ -1,21 +1,24 @@
+// Components
+import ActiveSubscription from './subscriptions/ActiveSubscription';
+
 // CSS Custom Styles
 import '../assets/css/Main.css';
 
 const Main = props => {
-	// const { movieData } = props;
+	const { subs } = props;
 	return (
-    <p>Acá voy a poner el body  variable</p>
-    /* 
-    <!-- listado de subscripciones -->
+    // listado de subscripciones
       <main className="container-fluid" role="main">
         <section className="mt-2">
+          <ul className="p-0">
 
-          <!-- Subscripción cargada desde Javascript -->
-          <ul id="mySubscriptions" className="p-0"></ul>
-
+            { subs.map((brand, idx) => <ActiveSubscription key={idx} subscriptionData={brand} />) }
+        
+          </ul>
+          {/* <p>Acá tienen que venir el listado completo de subscripciones (Subscription) y (PopularSubscription)</p> */}
+        
         </section>
       </main> 
-    */
     )
   }
   
