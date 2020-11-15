@@ -12,7 +12,7 @@ const ActiveSubscription = props => {
     <li className="my-2">
       <a id="cardUser" href="/">
         <div>
-          <div id="cardRow" className="row mx-0" style="backgroundcolor: white">
+          <div id="cardRow" className="row mx-0">
           
             {/* Logo */}
             <div className="col-2">

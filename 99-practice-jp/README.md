@@ -61,3 +61,23 @@ import '../assets/css/Main.css';
 #### Agregar Font Awesome para react proyect
 
 > [Documentación](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+
+#### Armar la DB como respuestas en Archivos JSON.
+
+> Dejarlo como array en App.js
+
+- [x] ActiveSubscription.json
+- [ ] PopularSubscription.json
+- [ ] Subscription.json
+
+E.g. `App.js`.
+
+```js
+  Poner acá el ejemplo
+```
+
+#### Pasar por props los valores de las tarjetas.
+
+- [ ] ActiveSubscription.json
+- [ ] PopularSubscription.json
+- [ ] Subscription.json

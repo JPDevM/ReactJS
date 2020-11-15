@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Spotify",
+    "colorid": "17",
+    "colorhexa": "55d656",
+    "logoicon": "fa-spotify",
+    "description": null,
+    "price": null,
+    "firstpayment": null
+  },
+  {
+    "id": "2",
+    "name": "Netflix",
+    "colorid": "1",
+    "colorhexa": "ee3f43",
+    "logoicon": null,
+    "description": null,
+    "price": null,
+    "firstpayment": null
+  },
+  {
+    "id": "3",
+    "name": "Dribbble",
+    "colorid": "2",
+    "colorhexa": "e33c6c",
+    "logoicon": "fa-dribbble",
+    "description": null,
+    "price": null,
+    "firstpayment": null
+  },
+  {
+    "id": "4",
+    "name": "Feedly",
+    "colorid": "17",
+    "colorhexa": "55d656",
+    "logoicon": null,
+    "description": null,
+    "price": null,
+    "firstpayment": null
+  },
+  {
+    "id": "5",
+    "name": "Dropbox",
+    "colorid": "9",
+    "colorhexa": "3f46ed",
+    "logoicon": "fa-dropbox",
+    "description": null,
+    "price": null,
+    "firstpayment": null
+  },
+  {
+    "id": "85",
+    "name": "Twitch",
+    "colorid": "7",
+    "colorhexa": "9646ee",
+    "logoicon": "fa-twitch",
+    "description": null,
+    "price": null,
+    "firstpayment": null
+  }
+]
