@@ -3,28 +3,26 @@
 ##### Initialize the project. 
 
 ```shell
-npx create-react-app 99-practice-jp
+$ npx create-react-app 99-practice-jp
 ```
-
-##### Create Folder structure. (Editar)
-
-<img src="/Users/jp/Documents/JPDevM/Dev/JPDevM CV on GitHub/node_practice/99-Practice_JP/public/images/docs/Folder-structure.png" alt="Folder-structure" style="zoom:50%;" />
-
-##### 
 
 ##### Install Bootstrap for ReactJS.
 
 ```shell
-npm install react-bootstrap bootstrap
+$ npm install react-bootstrap bootstrap
 ```
 
-#### acomodar las carpetas públicas
+##### Structure public folders.
 
-Crear las carpetas `css`, `js`, `scss` y `img`, dentro de `assets` en src.
+Create the folders `css`,` js`, `scss` and` img`, inside `assets` en and` components` inside `src`.
 
-### Separar las secciones en páginas principales
+.<img src="./src/assets/img/docs/Structure_Folders.png" alt="Structure_Folders" style="zoom:50%;" />
 
-> En `App.js` importo y creo los archivos JS.
+##### Compose the main sections.
+
+> Create the JS files of the components and import them.
+
+In main file. e.g.: <u>app.js</u>
 
 ```jsx
 // Components.
@@ -45,30 +43,59 @@ function App() {
 export default App;
 ```
 
-Muevo `App.js` en la carpeta `assets/components` y además agrego las distintas secciones, en este caso `Menu.js`, `Main.js` y `Footer.js`.
+Create the components in `assets/components`. e.g.: <u>Menu.js</u>
+
+> Idem in the other componets. e.i.: Main.js, Footer.js.
 
 ```jsx
 const Main = (props) => {
-  return <p>Acá voy a poner el body variable</p>;
+  return <p>Hello, {props.name}</p>;
 };
 
 export default Main;
 ```
 
-#### Crear los CSS para cada sección.
+##### Create the CSS for each section.
 
-> Importo y creo un css para cada componente `Menu.css`, `Main.css` y `Footer.css` en `assets/css`.
+Import and create a css for each component. e.g.: <u>Menu.css</u>
+
+> Idem in the other componets. e.i.: Main.css, Footer.css.
 
 ```jsx
 // CSS Custom Styles
-import '../assets/css/Main.css';
+import '../assets/css/Menu.css';
 ```
 
-#### Agregar Font Awesome para react proyect
+##### Pasar por props los valores de las tarjetas.
 
-> [Documentación](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+- [x] ActiveSubscription.json
+- [ ] PopularSubscription.json
+- [ ] Subscription.json
 
-#### Armar la DB como respuestas en Archivos JSON.
+
+
+
+
+##### Armar el ruteador
+
+> [Documentación](https://reactrouter.com/web/guides/quick-start) de react-router-dom
+
+- [x] Setear el router en app.
+- [ ] Falta ver que más ya que no puse ningún link aún.
+
+#### 
+
+
+
+##### Install thrid-party dependencies.
+
+* Font Awesome para react proyect. [Documentación](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+
+
+
+
+
+##### Armar la DB como respuestas en Archivos JSON.
 
 > Dejarlo como array en App.js
 
@@ -82,17 +109,6 @@ E.g. `App.js`.
   Poner acá el ejemplo
 ```
 
-#### Pasar por props los valores de las tarjetas.
 
-- [x] ActiveSubscription.json
-- [ ] PopularSubscription.json
-- [ ] Subscription.json
-
-#### Armar el ruteador
-
-> [Documentación](https://reactrouter.com/web/guides/quick-start) de react-router-dom
-
-- [x] Setear el router en app.
-- [ ] Falta ver que más ya que no puse ningún link aún.
 
 #### Acomodar el css de las tarjetas
