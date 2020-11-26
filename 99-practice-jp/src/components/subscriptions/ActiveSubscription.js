@@ -16,26 +16,30 @@ const ActiveSubscription = props => {
     //                 rounded 
     //                 subCard" + 
     //     className={subscriptionData.color}> 
-    <li className={" my-2 rounded subCard" + (subscriptionData.color)}> 
+    <li 
+      className={`my-2 rounded subCard ${subscriptionData.color}`} 
+      style={{ 
+        backgroundColor: subscriptionData.bg ? subscriptionData.bg : 'olive'
+      }}
+    > 
       {/* <a  id="cardUser" 
               href="/">  Routear a editar esta card */}
-        <div  id="cardRow" 
-              className="row mx-0">
+        <div id="cardRow" className="row mx-0">
         
           {/* Logo */}
           <div className="col-2">
-            <FontAwesomeIcon  icon={faSpotify}  
-                              size="lg" 
-                              color="green" /> {/* Reemplazar color con subscriptionData.logo */}
+            <FontAwesomeIcon  
+              icon={faSpotify}  
+              size="lg" 
+              color="green" 
+            /> {/* Reemplazar color con subscriptionData.logo */}
           </div>
 
           {/* Name */}
-          <div  id="cardUserCenter" 
-                className="col-6">
+          <div id="cardUserCenter" className="col-6">
             <div  className="row">
               <div className="col-12">
-                <p className="  my-0 
-                                text-truncate ">
+                <p className="my-0 text-truncate">
                   <strong>
                     {subscriptionData.name}
                   </strong>

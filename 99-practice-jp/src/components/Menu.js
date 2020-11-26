@@ -1,9 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faPlus } from '@fortawesome/free-solid-svg-icons'
 
-// CSS Custom Styles
-import '../assets/css/Menu.css';
-
 const Menu = props => {
   // const { movieData } = props;
   const { activeSection } = props;
