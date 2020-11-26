@@ -14,21 +14,38 @@ $ npm install react-bootstrap bootstrap
 
 ##### Structure public folders.
 
-Create the folders `css`,` js`, `scss` and` img`, inside `assets` en and` components` inside `src`.
+> This structure is more performant in <u>small projects</u> or with little information, so as not to overload the web.
+>
+> In <u>larger projects</u>, it is probably more performant to put `assets` in public.
 
-Al no estar en public, estos recursos se tienen que compilar. Para eso hay que importarlos. ej
+Create the folders `css`,` js`, `sass` and` img`, inside `assets` and` components` inside `src`.
 
-Import Photo from '../ assets/img/photo.jpg';
+<img src="./src/assets/img/docs/Structure_Folders.png" alt="Structure_Folders" style="zoom:50%;" />
+
+<!-- Al no estar en public, estos recursos se tienen que compilar. Para eso hay que importarlos. ej -->
+
+<!--Import Photo from '../ assets/img/photo.jpg';
 y se llama así
-<img src={Photo} /}
-Ventaja de hacer esto: 
+<img src={Photo} /} -->
 
-- Es más performante en proyectos chicos o con poca información, para no sobrecargar el web.
 
-.<img src="./src/assets/img/docs/Structure_Folders.png" alt="Structure_Folders" style="zoom:50%;" />
 
-<!-- Meter los js dentro de components y los sass dentro de assts -->
-el guión bajo dentro en los _scss es para que se compilen dentro de un mismo archivo.
+Avisarle a nico que le voy a transferir mañana
+A ver.... cuando termine la clase tengo que ver por que estoy poniendo SASS y SCSS y no sé la direfencia.... Después me falta compilar todo y testearlo. Bien ahí.
+Ir a comprar tabacco
+Anotar en la gramática del board las cosas nuevas en paz 140 del students.
+
+
+
+- [ ] Meter los js dentro de components y los sass dentro de assts-
+
+  > El guión bajo dentro en los _scss es para que se compilen dentro de un mismo archivo. 
+
+
+
+
+
+
 
 ##### Compose the main sections.
 
@@ -67,22 +84,52 @@ const Main = (props) => {
 export default Main;
 ```
 
-##### Create the CSS for each section.
 
-Import and create a css for each component. e.g.: <u>Menu.css</u>
 
-> Idem in the other componets. e.i.: Main.css, Footer.css.
+
+
+##### Create the SASS for each section.
+
+Create a SASS for each component. e.g.: <u>Menu.scss</u>
+
+> Idem in the other componets. e.i.: Main.scss, Footer.scss and the others components
 
 ```jsx
-// CSS Custom Styles
+// CSS Custom Styles   <<<<< Acá hay que cambiar de SASS a CSS >>
 import '../assets/css/Menu.css';
 ```
+
+- [ ] Definir que cosas pueden ser variables en SASS. 
+- [ ] Compilar SASS
+
+
+
+
+
+##### Create JSON file for DB Test.
+
+Create and import DB in main file. e.g.: <u>app.js</u>
+
+```jsx
+// Database for test. 
+import ActiveSubscriptionDB from '../data/ActiveSubscription.json';
+import PopularSubscriptionDB from '../data/PopularSubscription.json';
+import SubscriptionDB from '../data/Subscription.json';
+```
+
+
+
+
+
+
 
 ##### Pasar por props los valores de las tarjetas.
 
 - [x] ActiveSubscription.json
 - [ ] PopularSubscription.json
 - [ ] Subscription.json
+
+
 
 
 
@@ -141,24 +188,3 @@ El console.log en react lo leo desde la consola del navegador
 
 * Font Awesome para react proyect. [Documentación](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
 
-
-
-
-
-##### Armar la DB como respuestas en Archivos JSON.
-
-> Dejarlo como array en App.js
-
-- [x] ActiveSubscription.json
-- [ ] PopularSubscription.json
-- [ ] Subscription.json
-
-E.g. `App.js`.
-
-```js
-  Poner acá el ejemplo
-```
-
-
-
-#### Acomodar el css de las tarjetas

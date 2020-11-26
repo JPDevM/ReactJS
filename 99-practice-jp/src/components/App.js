@@ -8,28 +8,10 @@ import Main from './Main';
 import Footer from './Footer';
 import SettingMenu from './sttings/SettingMenu';
 
-// Database Usado en activeSubscriptions.JS --> Traer desde JSON y ver como hacer con el logo.
-// var SubscriptionsArray = JSON.parse('../data/ActiveSubscription.json');
-// import DB from '../data/ActiveSubscription.json';
-
-const ActiveSubsArray = [
-  {name: 'Spotify', logo: 'faSpotify', description: 'lo que puso el user', price: '3,50', firstpayment: '7 días', color: 'subCardColor-17'},
-  {name: 'Netflix', logo: 'faNetflix', description: 'no puso nada', price: '7,00', firstpayment: '12 días', color: 'subCardColor-1'},
-  {name: 'Dropbox', logo: 'faDropbox', description: '', price: '0,00', firstpayment: '1 días', color: 'subCardColor-9'},
-  {name: 'Amazon Prime', logo: 'faAmazon', description: '', price: '3,99', firstpayment: '14 días', color: 'subCardColor-15'},
-  {name: 'Icloud', logo: 'faIcloud', description: '2 TB', price: '10,00', firstpayment: '3 días', color: 'subCardColor-22'},];
-
-const PopularSubsArray = [
-  {name: 'POPSpotify', logo: 'faSpotify', description: 'lo que puso el user', price: '3,50', firstpayment: '7 días', color: 'subCardColor-17'},
-  {name: 'POPNetflix', logo: 'faNetflix', description: 'no puso nada', price: '7,00', firstpayment: '12 días', color: 'subCardColor-1'},
-  {name: 'POPDropbox', logo: 'faDropbox', description: '', price: '0,00', firstpayment: '1 días', color: 'subCardColor-9'},
-  {name: 'POPAmazon Prime', logo: 'faAmazon', description: '', price: '3,99', firstpayment: '14 días', color: 'subCardColor-15'},];
-
-const AllSubsArray = [
-  {name: 'AllSpotify', logo: 'faSpotify', description: 'lo que puso el user', price: '3,50', firstpayment: '7 días', color: 'subCardColor-17'},
-  {name: 'AllNetflix', logo: 'faNetflix', description: 'no puso nada', price: '7,00', firstpayment: '12 días', color: 'subCardColor-1'},
-  {name: 'AllDropbox', logo: 'faDropbox', description: '', price: '0,00', firstpayment: '1 días', color: 'subCardColor-9'},];
-
+// Database for test. 
+import ActiveSubscriptionDB from '../data/ActiveSubscription.json';
+import PopularSubscriptionDB from '../data/PopularSubscription.json';
+import SubscriptionDB from '../data/Subscription.json';
 
 const App = () => {
 
@@ -72,17 +54,17 @@ const App = () => {
           </Route>
 
           <Route path="/">
-            <Main subs = { ActiveSubsArray }/>
+            <Main subs = { ActiveSubscriptionDB }/>
             <Footer />
           </Route>
           
           <Route path="/PopSubs">
-            <Main subs = { PopularSubsArray }/>
+            <Main subs = { PopularSubscriptionDB }/>
             <Footer />
           </Route>
           
           <Route path="/AllSubs">          
-            <Main subs = { AllSubsArray }/>
+            <Main subs = { SubscriptionDB }/>
             <Footer />
           </Route>
         </Switch>
