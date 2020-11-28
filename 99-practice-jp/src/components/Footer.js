@@ -1,6 +1,3 @@
-// CSS Custom Styles
-import '../assets/css/Footer.css';
-
 const Footer = props => {
 	// const { movieData } = props;
 	return (

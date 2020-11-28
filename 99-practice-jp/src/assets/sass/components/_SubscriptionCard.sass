@@ -1,0 +1,14 @@
+// Card Styles
+
+#cardRow
+  color: white
+
+#cardLogo
+  font-size: 2em
+
+$i: 1
+@each $color in $cardsColors
+  .subCardColor-#{$i}
+    background-color: $color
+  $i: $i + 1
+   

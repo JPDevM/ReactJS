@@ -1,9 +1,6 @@
 // Components
 import ActiveSubscription from './subscriptions/ActiveSubscription';
 
-// CSS Custom Styles
-import '../assets/css/Main.css';
-
 const Main = props => {
 	const { subs } = props;
 	return (

@@ -5,7 +5,8 @@
     "description": "lo que puso el user",
     "price": "3,50",
     "firstpayment": "7 días",
-    "color": "subCardColor-17"
+    "color": "subCardColor-17",
+    "bg": "#f2f345"
   },
   {
     "name": "Netflix",
@@ -13,7 +14,8 @@
     "description": "no puso nada",
     "price": "7,00",
     "firstpayment": "12 días",
-    "color": "subCardColor-1"
+    "color": "subCardColor-1",
+    "bg": "#d4d2d5"
   },
   {
     "name": "Dropbox",
