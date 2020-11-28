@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 // CSS Custom Styles
-// import './SubscriptionCard.css';
 import '../../assets/css/app.css';
 
 const ActiveSubscription = props => {
@@ -12,10 +11,6 @@ const ActiveSubscription = props => {
 	return (
 
     // Container 
-    // <li className=" my-2 
-    //                 rounded 
-    //                 subCard" + 
-    //     className={subscriptionData.color}> 
     <li className={" my-2 rounded subCard" + (subscriptionData.color)}> 
       {/* <a  id="cardUser" 
               href="/">  Routear a editar esta card */}
@@ -45,7 +40,9 @@ const ActiveSubscription = props => {
               {/* Description */}
               <div className="col-12">
                 <p className="my-0 text-truncate">
-                <small>{subscriptionData.description}</small>
+                  <small>
+                    {subscriptionData.description}
+                  </small>
                 </p>
               </div>
             </div>

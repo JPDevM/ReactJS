@@ -104,6 +104,29 @@ import '../assets/css/Menu.css';
 
 
 
+<!-- El color de las tarjetas se  pasa por estilo... ver ActiveSubbscription.js -->
+
+<!-- El formato en filas para escribir en el HTML o Boostrap solo lo hago cuando hay algo dinámico. -->
+
+Para compilar usar un packete --> sass -g
+Configurarlo en los scripts del package.json (ver fromSassToCss)
+
+```shell
+$ npm run fromSassToCss
+```
+
+ --watch (usado en el package.json) queda escuchando los cambios :D
+
+
+
+
+
+Practicar hooks:
+
+- Hacer un proyecto aparte.
+
+
+
 
 
 ##### Create JSON file for DB Test.
