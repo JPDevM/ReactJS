@@ -4,11 +4,18 @@ import { Link, Switch, Route } from 'react-router-dom';
 
 import TestHooks from './TestHooks';
 import TestLifeCycle from './TestLifeCycle';
+import List from './List';
 
 const AppTest = () => {
 	return (
-		<div style={{ color: 'white' }}>
+		<div style={{ color: 'white' }} className="test">
+			
 			<h3>Componente inicial AppTest</h3>
+
+			<List dataList={['Pera', 'Banana', 'Frutilla']} />
+			
+			<List dataList={['Juan', 'Pedro', 'Mariano']} />
+
 			<Link to='/life-cycle'>Ir a Life Cycle</Link>
 			<br/>
 			<Link to='/hooks'>Ir a Hooks</Link>
