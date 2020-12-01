@@ -11,9 +11,6 @@ const ActiveSubscription = props => {
 	return (
 
     // Container 
-<<<<<<< HEAD
-    <li className={" my-2 rounded subCard" + (subscriptionData.color)}> 
-=======
     // <li className=" my-2 
     //                 rounded 
     //                 subCard" + 
@@ -24,7 +21,6 @@ const ActiveSubscription = props => {
         backgroundColor: subscriptionData.bg ? subscriptionData.bg : 'olive'
       }}
     > 
->>>>>>> 1247037a45407ec1acc50b1aed02f780496ccc69
       {/* <a  id="cardUser" 
               href="/">  Routear a editar esta card */}
         <div id="cardRow" className="row mx-0">
