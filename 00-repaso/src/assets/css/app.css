@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #e6e6e6;
+}
+
+.main-navbar {
+  background-color: salmon;
+  padding: 15px;
+}
+.main-navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-navbar li {
+  margin: 0 15px;
+}
+
+/*# sourceMappingURL=app.css.map */
