@@ -8,18 +8,16 @@ import './assets/css/bootstrap.min.css';
 
 // Main Component
 import App from './components/App';
-
-// Sandbox
-import AppTest from './components/playground/AppTest'
-
-// ReactDOM.render(
-// 	<Router>
-// 		<App />
-// 	</Router>
-// , document.getElementById('root'));
-
 ReactDOM.render(
 	<Router>
-		<AppTest /> 
+		<App />
 	</Router>
 , document.getElementById('root'));
+	
+// Sandbox
+// import AppTest from './components/playground/AppTest'	
+// ReactDOM.render(
+// 	<Router>
+// 		<AppTest /> 
+// 	</Router>
+// , document.getElementById('root'));
