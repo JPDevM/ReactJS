@@ -16,6 +16,8 @@ function App() {
 
   return (
     <>
+    {/* <TodoList todos= Es un atibuto que se a conertir en la prop del TodoList.js (los nombres deben ser iguales)
+    {todos} /> */}
       <TodoList todos={todos} />
       <input ref={ todoNameRef } type="text" />
       <button onClick={handleAddTodo}>Add todo</button>
