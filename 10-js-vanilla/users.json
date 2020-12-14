@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "first_name": "Mannie",
+    "last_name": "Van Cassel",
+    "email": "mvancassel0@mozilla.com",
+    "country": "KZ",
+    "currency": "KZT"
+  },
+  {
+    "id": 2,
+    "first_name": "Jack",
+    "last_name": "Gebby",
+    "email": "jgebby1@theguardian.com",
+    "country": "LT",
+    "currency": "LTL"
+  },
+  {
+    "id": 3,
+    "first_name": "Levon",
+    "last_name": "Gotmann",
+    "email": "lgotmann2@aboutads.info",
+    "country": "CZ",
+    "currency": "CZK"
+  },
+  {
+    "id": 4,
+    "first_name": "Dionisio",
+    "last_name": "Alen",
+    "email": "dalen3@berkeley.edu",
+    "country": "MG",
+    "currency": "MGA"
+  },
+  {
+    "id": 5,
+    "first_name": "Bentlee",
+    "last_name": "Erlam",
+    "email": "berlam4@toplist.cz",
+    "country": "CN",
+    "currency": "CNY"
+  },
+  {
+    "id": 6,
+    "first_name": "Woody",
+    "last_name": "Ruilton",
+    "email": "wruilton5@trellian.com",
+    "country": "DK",
+    "currency": "DKK"
+  },
+  {
+    "id": 7,
+    "first_name": "Joann",
+    "last_name": "Wilfling",
+    "email": "jwilfling6@istockphoto.com",
+    "country": "CA",
+    "currency": "CAD",
+    "favorite_colors": ["red", "blue", "yellow"],
+    "friends": [
+      {
+        "name": "Jane",
+        "email": "jane@gmail.com"
+      },
+      {
+        "name": "Paul",
+        "email": "paul@gmail.com"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "first_name": "Car",
+    "last_name": "Willshere",
+    "email": "cwillshere7@webs.com",
+    "country": "MX",
+    "currency": "MXN"
+  },
+  {
+    "id": 9,
+    "first_name": "Madeline",
+    "last_name": "Andreucci",
+    "email": "mandreucci8@sitemeter.com",
+    "country": "FI",
+    "currency": "EUR"
+  },
+  {
+    "id": 10,
+    "first_name": "Car",
+    "last_name": "Kolodziej",
+    "email": "ckolodziej9@a8.net",
+    "country": "FR",
+    "currency": "EUR"
+  }
+]
