@@ -64,7 +64,7 @@ function TodoComponent() {
 
 	return (
 		<>
-			<TodoList todosData={todosArray} fnCheck={handlerCheck} />
+			<TodoList  fnCheck={handlerCheck} />
 			<input ref={todoNameRef} type="text" />
 			<button onClick={handleAddTodo}>Add todo</button>
 			<button>Clear completed todos</button>
@@ -72,7 +72,6 @@ function TodoComponent() {
 			<div>{ todosArray.reduce((acum, todo) => acum + !todo.complete , 0) } left to do</div>
 		</>
 	)
-
 }
 
 export default TodoComponent;
