@@ -1,4 +1,3 @@
-import { log } from 'console';
 import fs from 'fs';
 import logInConsole, { sumar as Add } from './functions.js';
 
@@ -29,9 +28,3 @@ fs.writeFileSync('./usersEUREmails.csv', usersEUREmails);
 // JavaScript Object Notation
 // JSON.stringify => parsear de dato JS a string de tipo JSON
 logInConsole( JSON.stringify([{name: 'Juan Pa'}, {name: 'Javi'}]) );
-
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-console.log(__dirname);
