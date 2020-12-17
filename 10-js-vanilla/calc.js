@@ -1,6 +1,6 @@
 import { log } from 'console';
 import fs from 'fs';
-import logInConsole, { sumar as Add } from './funciones.js';
+import logInConsole, { sumar as Add } from './functions.js';
 
 // JSON.parse(string) => retorna ese string "parseado"
 let usersDB = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
