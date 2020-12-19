@@ -1,0 +1,45 @@
+.primary {
+  color: #c171ca;
+}
+.secondary {
+  color: #ffffff;
+}
+.success {
+  color: #bbbbbb;
+}
+.danger {
+  color: #000000;
+}
+.warning {
+  color: #000000;
+}
+.info {
+  color: #000000;
+}
+.light {
+  color: rgb(204, 214, 246);
+}
+.dark {
+  color: #000000;
+}
+
+// Background
+.bg-dark {
+  background-color: #3764be !important;
+}
+
+// Test
+.prueba {
+  width: 100%;
+  margin-left: 2%;
+  height: 5px;
+  padding-top: 5px;
+  background-color: brown;
+  display: block;
+  position: relative;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; // Inter-Bold font is loaded
+}
