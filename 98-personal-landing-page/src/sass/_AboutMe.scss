@@ -1,0 +1,13 @@
+// AboutMe Components Styles
+
+ul {
+  list-style: none; /* Remove HTML bullets */
+  padding: 0;
+  margin: 0;
+}
+
+li > p::before {
+  content: '▷'; /* Insert content that looks like bullets */
+  padding-right: 8px;
+  color: pink; /* Or a color you prefer */
+}

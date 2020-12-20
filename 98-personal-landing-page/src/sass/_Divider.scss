@@ -1,0 +1,10 @@
+.numbered-heading::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: -10px;
+  width: 60%;
+  height: 1px;
+  margin-left: 130px;
+  background-color: white;
+}

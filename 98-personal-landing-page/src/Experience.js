@@ -1,8 +1,6 @@
 import React from 'react'
 import Divider from './Divider'
 
-
-
 function Experience () {
   return (
     <>

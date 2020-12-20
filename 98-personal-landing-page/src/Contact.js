@@ -1,8 +1,6 @@
 import React from 'react'
 import Divider from './Divider'
 
-
-
 function Contac () {
   return (
     <>
@@ -28,7 +26,7 @@ function Contac () {
             LinkedInn
           </li>
         </ul>
-        <p className="secondary">Designed & Built by Brittany Chiang</p>
+        <p className="secondary">Designed & Built by JPDevM</p>
       </div>
     </>
   )

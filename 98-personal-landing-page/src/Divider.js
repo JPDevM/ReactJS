@@ -4,8 +4,7 @@ function Divider ({number, text}) {
     // console.log(this.props);
     return (
       <>
-        <h4 className="light"><spam className="primary">{number}</spam> {text}</h4>
-        <div clasName="prueba">donde está esto</div>
+        <h5 className="light mt-5 numbered-heading"><spam className="primary">{number}</spam> {text}</h5>
       </>
     )
 }

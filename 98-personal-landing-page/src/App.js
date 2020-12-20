@@ -1,8 +1,6 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 
-// Custom Styles
-
 // Custom components
 import NavBarMenu from './NavBarMenu'
 import MainContent from './MainContent'

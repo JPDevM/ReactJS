@@ -19,7 +19,7 @@ function AboutMe () {
       <p className="secondary">Trabajé como emprendedor.</p>
       <p className="secondary">Here are a few technologies I've been working with recently:</p>
       <Container>
-        <Row>
+        <Row className="secondary">
           <Col xs={6} md={4} lg={3}>
             <ul>
               <li>
