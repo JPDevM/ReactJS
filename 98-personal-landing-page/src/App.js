@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 
 // Custom components
-import NavBarMenu from './NavBarMenu'
+import NavBarMenuV2 from './NavBarMenuV2'
 import MainContent from './MainContent'
 import AboutMe from './AboutMe'
 import Experience from './Experience'
@@ -12,7 +12,7 @@ import Footer from './Footer'
 
 const App = () => ( 
   <>
-    <NavBarMenu />
+    <NavBarMenuV2 />
     <Container>
       <MainContent />
       <AboutMe />      

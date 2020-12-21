@@ -1,10 +1,11 @@
-import React, { Component }  from 'react'
-
-function Divider ({number, text}) {
-    // console.log(this.props);
+function Divider ({ number, text }) {
     return (
       <>
-        <h5 className="light mt-5 numbered-heading"><spam className="primary">{number}</spam> {text}</h5>
+        <h5 className="light mt-5 numbered-heading">
+          <span className="primary">{number}</span> 
+          <p>{text}</p>
+          <div className="divider-line"></div>
+        </h5>
       </>
     )
 }

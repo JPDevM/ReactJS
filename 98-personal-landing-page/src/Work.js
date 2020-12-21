@@ -1,7 +1,7 @@
-import React from 'react'
 import Divider from './Divider'
+import WorkExperience from './WorkExperience'
 
-
+import workData from './data/workExperience.json';
 
 function Work () {
   return (
@@ -11,6 +11,7 @@ function Work () {
         text='Some Things I’ve Built'
       />
       <p className="secondary">Work here.</p>
+      { workData.map((work, i) => <WorkExperience key={i} workContent={work}/>) }
     </>
   )
 }

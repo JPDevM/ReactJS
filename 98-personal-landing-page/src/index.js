@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom'; 
 import App from './App'; 
 
-// Custom Styles
-import './css/app.css';
-
 // Importing the Bootstrap CSS 
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
+// Custom Styles
+import './css/app.css';
 
 ReactDOM.render( 
 <React.StrictMode className="bg-dark"> 
