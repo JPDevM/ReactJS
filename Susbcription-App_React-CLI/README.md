@@ -1,6 +1,6 @@
 # Workflow to create frontend with ReactJS
 
-##### Initialize the project. 
+##### Initialize the project.
 
 ```shell
 $ npx create-react-app 99-practice-jp
@@ -27,25 +27,6 @@ Create the folders `css`,` js`, `sass` and` img`, inside `assets` and` component
 <!--Import Photo from '../ assets/img/photo.jpg';
 y se llama así
 <img src={Photo} /} -->
-
-
-
-Avisarle a nico que le voy a transferir mañana
-A ver.... cuando termine la clase tengo que ver por que estoy poniendo SASS y SCSS y no sé la direfencia.... Después me falta compilar todo y testearlo. Bien ahí.
-Ir a comprar tabacco
-Anotar en la gramática del board las cosas nuevas en paz 140 del students.
-
-
-
-- [ ] Meter los js dentro de components y los sass dentro de assts-
-
-  > El guión bajo dentro en los _scss es para que se compilen dentro de un mismo archivo. 
-
-
-
-
-
-
 
 ##### Compose the main sections.
 
@@ -84,10 +65,6 @@ const Main = (props) => {
 export default Main;
 ```
 
-
-
-
-
 ##### Create the SASS for each section.
 
 Create a SASS for each component. e.g.: <u>Menu.scss</u>
@@ -99,10 +76,8 @@ Create a SASS for each component. e.g.: <u>Menu.scss</u>
 import '../assets/css/Menu.css';
 ```
 
-- [ ] Definir que cosas pueden ser variables en SASS. 
+- [ ] Definir que cosas pueden ser variables en SASS.
 - [ ] Compilar SASS
-
-
 
 <!-- El color de las tarjetas se  pasa por estilo... ver ActiveSubbscription.js -->
 
@@ -115,48 +90,28 @@ Configurarlo en los scripts del package.json (ver fromSassToCss)
 $ npm run fromSassToCss
 ```
 
- --watch (usado en el package.json) queda escuchando los cambios :D
-
-
-
-
+--watch (usado en el package.json) queda escuchando los cambios :D
 
 Practicar hooks:
 
 - Hacer un proyecto aparte.
-
-
-
-
 
 ##### Create JSON file for DB Test.
 
 Create and import DB in main file. e.g.: <u>app.js</u>
 
 ```jsx
-// Database for test. 
+// Database for test.
 import ActiveSubscriptionDB from '../data/ActiveSubscription.json';
 import PopularSubscriptionDB from '../data/PopularSubscription.json';
 import SubscriptionDB from '../data/Subscription.json';
 ```
-
-
-
-
-
-
 
 ##### Pasar por props los valores de las tarjetas.
 
 - [x] ActiveSubscription.json
 - [ ] PopularSubscription.json
 - [ ] Subscription.json
-
-
-
-
-
-
 
 ##### Armar el ruteador
 
@@ -165,12 +120,10 @@ import SubscriptionDB from '../data/Subscription.json';
 - [x] Setear el router en app.
 - [ ] Falta ver que más ya que no puse ningún link aún.
 
-El menú va a ser un componente de estado. 
+El menú va a ser un componente de estado.
 En donde el estado va a estar pendiente de la ruta y de acuerdo a esta va a actuar distinto.
 
 Paso obligatorio: en app.js hay que utilizar el browserrouter para anidar la <App> (para saber que la app está contenida en el ruteador)
-
-
 
 Para eso usamos el useState para setear el estado.
 También usamos el useEffect para estar pendiente el estado.
@@ -180,11 +133,7 @@ En cada <Link> le cambiamos el estado con setLocation con la nueva url.
 
 Le pasamos al componente <Menu lo que capturamos de la URL como estado
 
-
-
-Ahora de acuerdo al estado elejimos que mostrar. (si la url es X mostramos ESTO) eje. location === '/settings' ? 
-
- 
+Ahora de acuerdo al estado elejimos que mostrar. (si la url es X mostramos ESTO) eje. location === '/settings' ?
 
 useHistotory es un Hoock, por lo que necesito el useEffect de react por que es asíncrono y de esta forma yo se cuando se termina de montar. Ej
 
@@ -193,21 +142,14 @@ useEffect (() => {
 
 console.log ('se montó el componente')
 
-
-
 }, [location])
 
 El impor en archivos Json ya viene parseado.
 
-
-
 El console.log en react lo leo desde la consola del navegador
 
-#### 
-
-
+####
 
 ##### Install thrid-party dependencies.
 
-* Font Awesome para react proyect. [Documentación](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
-
+- Font Awesome para react proyect. [Documentación](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
