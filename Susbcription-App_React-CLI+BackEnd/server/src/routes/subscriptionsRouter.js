@@ -12,7 +12,7 @@ const controller = require('../controllers/subscriptionsController');
 // BROWSE - See all ('.../')
 router.get('/', controller.browse);
 // EDIT - Edit one ('.../:id')
-router.put('/:id', controller.edit);
+router.patch('/:id', controller.edit);
 // CREATE - Add one ('.../')
 router.post('/', controller.create);
 // DELETE - Delete one ('.../id')
