@@ -52,8 +52,9 @@ $ npm i
 - [x] Create Sass script.
 - [x] Install React.
 - [ ] Send the invoice to Jose luis mallorca
-- [ ] Compress video for Agostina.
+- [X] Compress video for Agostina.
 - [ ] Create a Bitbuket Readme for the workflow.
+- [ ] Uninstall Postman
 - [ ] Implemen git flow. 
 - [ ] Delete views form backend.
 - [ ] Do the Styles.
