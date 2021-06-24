@@ -7,19 +7,15 @@ const controller = require('../controllers/usersController');
 const { auth, guest } = require('../middlewares/authMiddleware');
 
 // BREAD: Respond to http://localhost:5000/users
-// 1 BROWSE - See all
+// BROWSE - See all
 router.get('/', controller.browse);
-// 3 EDIT - Edit one (edit form)(view)
-router.get('/:id/edit', controller.editForm);
-// 4 EDIT - Edit one
+// EDIT - Edit one
 router.put('/:id', controller.edit);
-// 5 CREATE - Add one (creation form)(view)
-router.get('/create', guest, controller.createForm);
-// 6 CREATE - Add one
+// CREATE - Add one
 router.post('/', controller.create);
-// 7 DELETE - Delete one
+// DELETE - Delete one
 router.delete('/', controller.delete);
-// 8 SEARCH - Find
+// SEARCH - Find
 router.get('/search', controller.search);
 // Login Page (Form to login)
 router.get('/login', guest, controller.login);
@@ -29,7 +25,7 @@ router.post('/login', controller.loginProcess);
 router.get('/profile', auth, controller.profile);
 // Logout process
 router.post('/logout', controller.logout);
-// 2 READ - See one
+// READ - See one
 router.get('/:id', controller.read);
 
 module.exports = router;

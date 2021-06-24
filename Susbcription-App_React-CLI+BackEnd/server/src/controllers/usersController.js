@@ -4,7 +4,6 @@
 
 // Import models into controller.
 // A the destructuring, using the table name in the model.
-const { request, response } = require('express');
 const { user } = require('../database/models');
 
 const bcrypt = require('bcryptjs');
@@ -34,38 +33,9 @@ module.exports = {
     }
   },
 
-  // 3 EDIT - Edit one (edit form)(view)('.../:id/edit')
-  editForm: (request, response) => {
-    try {
-      const userToEdit = request.params;
-      // Success
-      return response.json({
-        metadata: {
-          status: 200,
-          message: 'Success',
-        },
-        data: userToEdit,
-      });
-    } catch (error) {
-      // Fail
-      return response.status(500).json({
-        metadata: {
-          status: 500,
-          message: 'Could not list from database.',
-          reason: error,
-        },
-      });
-    }
-  },
-
   // 4 EDIT - Edit one ('.../:id')
   edit: (request, response) => {
     return response.render('users/edit');
-  },
-
-  // 5 CREATE - Add one (creation form)(view) ('.../create')
-  createForm: (request, response) => {
-    return response.render('users/add');
   },
 
   // 6 CREATE - Add one ('.../')

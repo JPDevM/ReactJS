@@ -7,18 +7,21 @@ const methodOverride = require('method-override'); // To make PUT requests in Ex
 const session = require('express-session');
 const path = require('path');
 
-require('dotenv').config(); // enviroment variables .env
+require('dotenv').config({ path: './.env' }); // enviroment variables .env
 
 // Initiate app
-const app = express();
-const PORT = process.env.APP_PORT || 3000;
-app.listen(PORT, () => {
-  // Welcome menssaje
-  console.log(
-    `Hi ${process.env.USER_NAME}, have a nice day! the server is now live in http://${process.env.APP_HOST}:${PORT}`
-  );
 
-}); // Port
+const app = express();
+// Welcome menssaje
+const USER = process.env.USER_NAME;
+const PORT = process.env.APP_PORT || 3000 ;
+const HOST = process.env.APP_HOST;
+app.listen(
+  PORT,
+  console.log(
+    `Hi ${USER}, have a nice day! the server is now live in http://${HOST}:${PORT}/`
+  )
+);
 
 app.use(cors()); // Enable All CORS Requests.
 

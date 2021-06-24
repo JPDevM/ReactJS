@@ -3,6 +3,16 @@
 ╔uu══════════════════╗☆
        Mixins  
 ╚══════nn════════════╝ */
+.light {
+  background: #eee;
+  color: black;
+}
+
+.dark {
+  background: #333;
+  color: white;
+}
+
 /* ☆ （ • •）☆
 ╔uu══════════════════╗☆
  Global Settings  
@@ -318,6 +328,16 @@ ul {
 }
 .carousel-caption p {
   font-family: "Raleway", sans-serif;
+}
+
+/* ☆ （ • •）☆
+╔uu══════════════════╗☆
+    Sigin & Login  
+╚══════nn════════════╝ */
+#bodySigin,
+#bodyLogin {
+  background-color: #00f5ff;
+  background: linear-gradient(to left, #f000d2 0%, #00f5ff 100%);
 }
 
 /* ☆ （ • •）☆

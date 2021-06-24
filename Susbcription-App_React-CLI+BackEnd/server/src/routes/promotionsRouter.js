@@ -4,16 +4,18 @@ const router = express.Router();
 
 const controller = require('../controllers/promotionsController');
 
-// BREAD - API
-// Respond to http://localhost:5000/promotions
-router.get('/', (req, res, next) => {
-	console.log('Pasé por el MD');
-	next();
-}, controller.browse);
+// BREAD: Respond to http://localhost:5000/promotions
+// BROWSE - See all ('.../')
+router.get('/', controller.browse);
+// EDIT - Edit one ('.../:id')
 router.put('/:id', controller.edit);
+// CREATE - Add one ('.../')
 router.post('/', controller.add);
+// DELETE - Delete one ('.../id')
 router.delete('/:id', controller.delete);
+// SEARCH - Find ('.../search')
 router.get('/search', controller.search);
-router.get('/:id', controller.read); // Siempre al final
+// READ - See one ('.../:id')
+router.get('/:id', controller.read);
 
 module.exports = router;
