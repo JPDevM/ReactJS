@@ -34,23 +34,85 @@ module.exports = {
   },
 
   // EDIT - Edit one ('.../:id')
-  edit: (request, response) => {
-    return response.json({
-      endPoint: 'Edit',
+  edit: async (request, response) => {
+    let dataToUpdate = {
+      isActive: request.bodyisActive === 'Si' ? 1 : 0,
+      type: request.bodytype,
+      startDate: request.bodystartDate,
+      endDate: request.bodyendDate,
+      urlPath: request.bodyurlPath,
+      description: request.bodydescription,
+      userId: request.bodyuserId,
+    };
+
+    // Edit in db.
+    const onePromotios = await promotion.update(dataToUpdate, {
+      where: { id: request.params.id },
+    });
+    // Sucess: edit in db.
+    if (onePromotios[0] === 1) {
+      const promotionUpdated = await promotion.findByPk(request.params.id);
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: promotionUpdated,
+      });
+    }
+    // Fail
+    return response.status(500).json({
+      metadata: {
+        status: 500,
+        message: 'Could not connect with data base.',
+        reason: error,
+      },
     });
   },
 
   // CREATE - Add one ('.../')
-  add: (request, response) => {
-    return response.json({
-      endPoint: 'Add',
-    });
+  create: (request, response) => {
+    let dataToUpdate = {
+      isActive: request.bodyisActive === 'Si' ? 1 : 0,
+      type: request.bodytype,
+      startDate: request.bodystartDate,
+      endDate: request.bodyendDate,
+      urlPath: request.bodyurlPath,
+      description: request.bodydescription,
+      userId: request.bodyuserId,
+    };
+
+    promotion
+      .create(dataToUpdate)
+      // Success message.
+      .then((data) => {
+        return response.send({
+          status: 200,
+          message: 'done',
+          data: data,
+        });
+      })
+      // Error message. Optional; when not saved in the db.
+      .catch((error) => {
+        return response.status(504).send({
+          status: 504,
+          message: 'Imposible guardar en la DB.',
+          error: error,
+        });
+      });
   },
 
   // DELETE --> Delete one ('.../:id')
   delete: (request, response) => {
-    return response.json({
-      endPoint: 'Delete',
+    promotion.update({ where: { id: request.params.id } }).then((promotion) => {
+      // Success message.
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: promotion,
+      });
     });
   },
 
@@ -75,9 +137,28 @@ module.exports = {
   },
 
   // READ --> See one ('.../:id')
-  read: (request, response) => {
-    return response.json({
-      endPoint: 'Read',
-    });
+  read: async (request, response) => {
+    try {
+      const onePromotion = await promotion.findOne({
+        where: { id: request.params.id },
+      });
+      // Success message.
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: onePromotion,
+      });
+    } catch (error) {
+      // Fail
+      return response.status(500).json({
+        metadata: {
+          status: 500,
+          message: 'Could not list from database.',
+          reason: error,
+        },
+      });
+    }
   },
 };
