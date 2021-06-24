@@ -4,6 +4,7 @@ const faker = require('faker'); // faker.js - generate massive amounts of fake d
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    // Inital colors:
     const fakeSubscription = [];
 
     for (let i = 1; i <= 50; i++) {

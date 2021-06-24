@@ -37,8 +37,8 @@ module.exports = {
   // EDIT - Edit one ('.../:id')
   edit: async (request, response) => {
     let dataToUpdate = {
-      isActive: request.body.isActive === 'si' ? 1 : 0,
-      isPopular: request.body.isPopular === 'si' ? 1 : 0,
+      isActive: request.body.isActive === 'Si' ? 1 : 0,
+      isPopular: request.body.isPopular === 'Si' ? 1 : 0,
       name: request.body.name,
       logo: request.body.logo,
       description: request.body.description,
@@ -50,28 +50,34 @@ module.exports = {
       currency: request.body.currency,
       style: request.body.style,
       userId: request.body.userId,
-      colorId: request.body.colorId
+      colorId: request.body.colorId,
     };
 
-    // Se edita el registro
-    const oneSubscription = await subscription.update(
-      dataToUpdate,
-      {
-        where: { id: request.params.id },
-      }
-    );
-
-    // Si la edición se dió OK, entonces retornamos el registro actualizado
+    // Edit in db.
+    const oneSubscription = await subscription.update(dataToUpdate, {
+      where: { id: request.params.id },
+    });
+    // Sucess: edit in db.
     if (oneSubscription[0] === 1) {
-      const subscriptionUpdated = await subscription.findByPk(request.params.id);
-      return response.send(subscriptionUpdated);
+      const subscriptionUpdated = await subscription.findByPk(
+        request.params.id
+      );
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: subscriptionUpdated,
+      });
     }
-
-    // Si la edición NO funcionó, entonces retornamos un error
-    return response.status(501).json({ 
-        status: 501,
-        message: 'Could not connect with data base'
-    })
+    // Fail
+    return response.status(500).json({
+      metadata: {
+        status: 500,
+        message: 'Could not connect with data base.',
+        reason: error,
+      },
+    });
   },
 
   // CREATE - Add one ('.../')
@@ -97,7 +103,7 @@ module.exports = {
       userId: request.body.userId, // INTERGER,
       colorId: request.body.colorId, // INTEGER,
     };
-   
+
     subscription
       .create(dataToSave)
       // Success message.
@@ -123,7 +129,14 @@ module.exports = {
     subscription
       .update({ where: { id: request.params.id } })
       .then((subscription) => {
-        return response.json(subscription);
+        // Success message.
+        return response.json({
+          metadata: {
+            status: 200,
+            message: 'Success',
+          },
+          data: subscription,
+        });
       });
   },
 
