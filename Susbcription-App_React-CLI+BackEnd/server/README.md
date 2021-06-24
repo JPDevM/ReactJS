@@ -51,8 +51,6 @@ $ npm i
 
 - [x] Create Sass script.
 - [x] Install React.
-- [ ] Send the invoice to Jose luis mallorca
-- [X] Compress video for Agostina.
 - [ ] Create a Bitbuket Readme for the workflow.
 - [ ] Uninstall Postman
 - [ ] Implemen git flow. 
@@ -64,3 +62,5 @@ $ npm i
 - [ ] Do the mockups
 - [ ] Use the colors, relations between tables.
 - [ ] Insert initial colors in database.
+
+
