@@ -141,7 +141,24 @@ module.exports = {
   },
 
   // SEARCH - Find ('.../search')
-  search: (request, response) => {},
+  search: (request, response) => {    
+    let token = Number(request.query.token);
+    let word = request.query.name;
+
+    if (!token || token !== 123456) {
+      return response.status(500).json({
+        status: 500,
+        message: 'Bad request',
+        reason: 'Token missmatch',
+      });
+    }
+
+    return response.json({
+      endPoint: 'Search',
+      word,
+      token,
+    });
+  },
 
   // READ --> See one ('.../:id')
   read: async (request, response) => {

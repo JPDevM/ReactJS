@@ -74,8 +74,8 @@ $ npm i
 - [x] Create a Bitbuket Readme for the workflow.
 - [x] Implemen git flow.
 - [x] REST-API: Subscription methods.
+- [x] REST-API: Promotions methods.
 - [ ] REST-API: User methods.
-- [ ] REST-API: Promotions methods.
 - [ ] REST-API: Do the mockups.
 - [ ] REST-API: Use the colors, create relations between tables.
 - [ ] Seeders: Insert initial colors in db from Json.

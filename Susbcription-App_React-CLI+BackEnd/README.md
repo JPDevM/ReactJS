@@ -13,7 +13,7 @@ This repository contains some articles and some basic projects in React.JS
 
 #### Subscription app
 
-> In the folder `Susbcription-App_React-CLI`. [aquí](./Susbcription-App_React-CLI).
+> In the folder `Susbcription-App_React-CLI`. [here](./Susbcription-App_React-CLI).
 > FrontEnd: `React.JS`.
 > DevOps: `Gitflow Workflow`.
 
