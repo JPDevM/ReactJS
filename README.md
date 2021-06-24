@@ -9,7 +9,9 @@ This repository contains some articles and some basic projects in React.JS
 > In the folder `Susbcription-App_React-CLI+BackEnd`. [here](./Susbcription-App_React-CLI+BackEnd).
 
 BackEnd: `Node.JS`, `Express.JS`, `MySQL`, `Sequelize`.
+
 FrontEnd: `React.JS`.
+
 DevOps: `Gitflow Workflow`.
 
 #### Subscription app
@@ -17,6 +19,7 @@ DevOps: `Gitflow Workflow`.
 > In the folder `Susbcription-App_React-CLI`. [here](./Susbcription-App_React-CLI).
 
 FrontEnd: `React.JS`.
+
 DevOps: `Gitflow Workflow`.
 
 ## Artículos
