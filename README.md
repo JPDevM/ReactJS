@@ -1,10 +1,10 @@
-# About this
+# :surfing_man: About this :surfing_man:
 
-This repository contains some articles and some basic projects in React.JS
+> :writing_hand: :writing_hand: This repository contains some articles and some basic projects in React.JS
 
-<!-- React logo -->
+![React logo](./Images_docs/React_logo.png)
 
-## Proyectos
+## Proyects
 
 #### Subscription app + backend.
 

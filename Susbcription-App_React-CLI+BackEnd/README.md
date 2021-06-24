@@ -67,6 +67,12 @@ $ npm i
 
   ![Flujo de trabajo de Git flow](../Images_docs/Flujo-de-trabajo-de-Git-flow.png)
 
+#### Database.
+
+> Database schema `subs_db`. Image generator: [diagram.io](https://dbdiagram.io)  
+
+![db_schema](../Images_docs/db_schema.png)
+
 ### TO-DOs
 
 - [x] Create Sass script.
