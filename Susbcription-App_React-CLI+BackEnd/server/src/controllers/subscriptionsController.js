@@ -36,10 +36,42 @@ module.exports = {
 
   // EDIT - Edit one ('.../:id')
   edit: async (request, response) => {
-    const oneSubscription = await subscription.findOne({
-      where: { id: request.params.id },
-    });
-    return response.send({ oneSubscription });
+    let dataToUpdate = {
+      isActive: request.body.isActive === 'si' ? 1 : 0,
+      isPopular: request.body.isPopular === 'si' ? 1 : 0,
+      name: request.body.name,
+      logo: request.body.logo,
+      description: request.body.description,
+      price: request.body.price,
+      firstPayment: request.body.firstPayment,
+      recurrency: request.body.recurrency,
+      longDate: request.body.longDate,
+      notification: request.body.notification,
+      currency: request.body.currency,
+      style: request.body.style,
+      userId: request.body.userId,
+      colorId: request.body.colorId
+    };
+
+    // Se edita el registro
+    const oneSubscription = await subscription.update(
+      dataToUpdate,
+      {
+        where: { id: request.params.id },
+      }
+    );
+
+    // Si la edición se dió OK, entonces retornamos el registro actualizado
+    if (oneSubscription[0] === 1) {
+      const subscriptionUpdated = await subscription.findByPk(request.params.id);
+      return response.send(subscriptionUpdated);
+    }
+
+    // Si la edición NO funcionó, entonces retornamos un error
+    return response.status(501).json({ 
+        status: 501,
+        message: 'Could not connect with data base'
+    })
   },
 
   // CREATE - Add one ('.../')
@@ -65,6 +97,7 @@ module.exports = {
       userId: request.body.userId, // INTERGER,
       colorId: request.body.colorId, // INTEGER,
     };
+   
     subscription
       .create(dataToSave)
       // Success message.
