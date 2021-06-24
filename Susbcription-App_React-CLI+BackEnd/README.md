@@ -41,31 +41,31 @@ $ npm i
 
 > JavaScript
 
-<img src="http://1000marcas.net/wp-content/uploads/2020/11/JavaScript-logo.png" alt="JavaScript logo" style="zoom:4%;" />
+![javascript_logo](../Images_docs/javascript_logo.png)
 
 ##### BackEnd:
 
 > - Node.JS, Express.JS, MySQL, Sequelize.JS
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png" alt="Node logo" style="zoom:20%;" />
+![Node logo](../Images_docs/node_logo.png)
 
-<img src="https://seeklogo.com/images/E/express-js-logo-FA36FF1D3F-seeklogo.com.png" alt="Express logo" style="zoom:40%;" />
+![Express logo](../Images_docs/express_logo.png)
 
-<img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL logo" style="zoom:50%;" />
+![MySQL logo](../Images_docs/mysql_logo.png)
 
-<img src="http://assets.stickpng.com/images/58482ee4cef1014c0b5e4a75.png" alt="Sequelize logo" style="zoom:18%;" />
+![Sequelize logo](../Images_docs/sequelize_logo.png)
 
 ##### FrontEnd:
 
 > React.JS
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/React_Native.png" alt="React logo" style="zoom:60%;" />
+![React logo](../Images_docs/react_logo.png)
 
 ##### DevOps:
 
 - Gitflow Workflow: [GitFlow-English](./GitFlow-English.md), [GitFlow-English](./GitFlow-English.md)
 
-  ![Flujo de trabajo de Git flow: ramas de corrección](https://wac-cdn.atlassian.com/dam/jcr:cc0b526e-adb7-4d45-874e-9bcea9898b4a/04%20Hotfix%20branches.svg?cdnVersion=1675)
+  ![Flujo de trabajo de Git flow](../Images_docs/Flujo-de-trabajo-de-Git-flow.png)
 
 ### TO-DOs
 

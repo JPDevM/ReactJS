@@ -2,6 +2,8 @@
 
 This repository contains some articles and some basic projects in React.JS
 
+<!-- React logo -->
+
 ## Proyectos
 
 #### Subscription app + backend.
