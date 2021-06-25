@@ -6,7 +6,7 @@
 
 In server folder, create a `.env` file and copy the content from `.env.example`.
 
-#### Cosas para el servidor
+#### Things for the server
 
 Install node dependences.
 
@@ -81,6 +81,8 @@ $ npm i
 - [x] Implemen git flow.
 - [x] REST-API: Subscription methods.
 - [x] REST-API: Promotions methods.
+- [ ] REST-API: Validate incoming data for Subscription method (edit, create, delete).
+- [ ] REST-API: Validate incoming data for promotion method (edit, create, delete).
 - [ ] REST-API: User methods.
 - [ ] REST-API: Do the mockups.
 - [ ] REST-API: Use the colors, create relations between tables.
