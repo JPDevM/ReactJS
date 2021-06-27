@@ -7,7 +7,14 @@
 const { subscription } = require('../database/models');
 
 // Helpers Functions
-const calculateDate = require('../helperFn/calculateDate');
+const { nextPaymentDate } = require('../helperFn/calculateDate');
+
+// temporal variables for test
+var firstPayment = '2020-02-12 07:37:42';
+var recurrency = 'monthly';
+var longDate = '2021-10-30 12:19:29';
+
+console.log(nextPaymentDate(firstPayment, recurrency, longDate));
 
 module.exports = {
   // BROWSE --> See all. ('.../')
@@ -141,7 +148,7 @@ module.exports = {
   },
 
   // SEARCH - Find ('.../search')
-  search: (request, response) => {    
+  search: (request, response) => {
     let token = Number(request.query.token);
     let word = request.query.name;
 
