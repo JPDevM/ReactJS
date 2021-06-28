@@ -1,77 +1,75 @@
-var moment = require('moment');
-require('moment-recur'); // borrar, solo para el test
+// ------------------------------- //
+// Node.JS Helper calculateDate    //
+// ------------------------------- //
+var moment = require('moment'); // https://momentjs.com/docs/
+require('moment-recur'); // https://github.com/c-trimm/moment-recur, https://github.com/bbqsrc/moment-recur2
 
 module.exports = {
-  nextPaymentDate: (firstPayment, recurrency, longDate) => {
-    //  Calculate the next subscription payment date.
-    var thisDay = moment().format('D');
-    var thisMonth = moment().format('M');
-    var thisYear = moment().format('Y');
+  // Output:
+  // nextPaymentDates[n] ['July 12, 2021','June 12, 2021',...,]
+  // previousPaymentDates[n] ['July 12, 2021','June 12, 2021',...,]
 
-		var recurrence = moment()
-      .recur({
-        start: firstPayment,
-        end: longDate,
-      })
-      .every(1)
-      .months(); // every(1).years(); every(2).months(); every(1).weeks();
-
-    var allDates = recurrence.all('LL');
-
-    console.log(JSON.stringify(allDates));
-
-
-    switch (recurrency) {
+  nextPaymentDates: (starDate, recurrencyFromDB, endDate, count) => {
+    // Configs
+    moment.defaultFormat = 'DD MMM';
+    moment.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+    // Setters
+    switch (recurrencyFromDB) {
+      // Create a recurrence
       case 'monthly':
-        var paymentDay = moment(firstPayment).format('D'); // 12
-        if (paymentDay > thisDay) {
-          var paymentMonth = moment(thisMonth).add(1, 'M');
-        }
-        var paymentMonth = thisMonth;
-        var paymentYear = thisYear;
-
-        var nextPaymentDate = moment([
-          paymentYear,
-          paymentMonth,
-          paymentDay,
-        ]).format('D, MMM, YYYY');
+        var recurrence = moment(starDate).recur(endDate).every(3).days();
         break;
+
       case 'bimonthly':
-        var paymentDay = moment(firstPayment).format('D');
-        if (paymentDay > thisDay) {
-          var paymentMonth = moment(thisMonth).add(2, 'M');
-        }
-        var paymentMonth = moment(thisMonth).add(1, 'M');
-        var paymentYear = thisYear;
-
-        var nextPaymentDate = moment([
-          paymentYear,
-          paymentMonth,
-          paymentDay,
-        ]).format('D, MMM, YYYY');
+        var recurrence = moment(starDate).recur(endDate).every(3).days();
         break;
+
       case 'weekly':
-        var paymentDate = 'switch weekly';
+        var recurrence = moment(starDate).recur(endDate).every(3).days();
         break;
+
       case 'yearly':
-        var paymentDate = 'switch yearly';
+        var recurrence = moment(starDate).recur(endDate).every(3).days();
         break;
+
       default:
-        var paymentDate = 'switch default';
+        // Create a recurrence
+        var recurrence = {};
+        recurrence.save();
     }
-
-    // Una vez resuelto los casos y obtener nextPaymentDate, ver que no esten vencido con longDate
-
-    return nextPaymentDate;
-    // let paymentDate = firstPayment - longDate;
-    // // Output format: August 24, 1970
-    // return moment(paymentDate).format('LL');
+    const date = recurrence.next(count, moment.defaultFormat);
+    return date;
   },
 
-  nextPaymentDateRelative: (firstPayment, recurrency, longDate) => {
-    //  Calculate the next subscription payment date.
-    return console.log(longDate);
-    // Output format: 26 June 2021
-    return firstPayment - longDate;
+  previousPaymentDates: (starDate, recurrencyFromDB, endDate, count) => {
+    // Configs
+    moment.defaultFormat = 'DD MMM';
+    moment.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+    // Setters
+    switch (recurrencyFromDB) {
+      // Create a recurrence
+      case 'monthly':
+        var recurrence = moment(starDate).recur(endDate).every(1).days(); // .months() --> don't work
+        break;
+
+      case 'bimonthly':
+        var recurrence = moment(starDate).recur(endDate).every(2).days(); // .months() --> don't work
+        break;
+
+      case 'weekly':
+        var recurrence = moment(starDate).recur(endDate).every(1).weeks();
+        break;
+
+      case 'yearly':
+        var recurrence = moment(starDate).recur(endDate).every(1).years();
+        break;
+
+      default:
+        // Create a recurrence
+        var recurrence = {};
+        recurrence.save();
+    }
+    const date = recurrence.previous(count, moment.defaultFormat);
+    return date;
   },
 };
