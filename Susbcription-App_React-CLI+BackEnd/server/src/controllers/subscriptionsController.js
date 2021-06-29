@@ -7,7 +7,24 @@
 const { subscription } = require('../database/models');
 
 // Helpers Functions
-const calculateDate = require('../helperFn/calculateDate');
+const {
+  nextPaymentDates,
+  previousPaymentDates,
+} = require('../helperFn/calculateDate');
+const { all } = require('../routes/staticRouter');
+
+// temporal variables for test
+// var firstPayment = '2020-02-12 07:37:42';
+// var recurrency = 'monthly';
+// var longDate = '2021-10-30 12:19:29';
+// console.log(
+//   'nextPaymentDates: ',
+//   nextPaymentDates(firstPayment, recurrency, longDate, 3)
+// );
+// console.log(
+//   'previousPaymentDates: ',
+//   previousPaymentDates(firstPayment, recurrency, longDate, 3)
+// );
 
 module.exports = {
   // BROWSE --> See all. ('.../')
@@ -15,8 +32,23 @@ module.exports = {
     try {
       const allSubscription = await subscription.findAll();
       // Success
+      // add dates
+      for (const oneSubscription in allSubscription) {
+        let firstPayment = allSubscription[oneSubscription].firstPayment;
+        let recurrency = allSubscription[oneSubscription].recurrency;
+        let longDate = allSubscription[oneSubscription].longDate;
+
+        allSubscription[oneSubscription].push(
+          nextPaymentDates(firstPayment, recurrency, longDate, 5)
+        );
+        allSubscription[oneSubscription].push(
+          previousPaymentDates(firstPayment, recurrency, longDate, 5)
+        );
+      }
       return response.json({
         metadata: {
+          // test1: nextPaymentDates(firstPayment, recurrency, longDate, 5),
+          // test2: previousPaymentDates(firstPayment, recurrency, longDate, 5),
           status: 200,
           message: 'Success',
         },
@@ -141,7 +173,7 @@ module.exports = {
   },
 
   // SEARCH - Find ('.../search')
-  search: (request, response) => {    
+  search: (request, response) => {
     let token = Number(request.query.token);
     let word = request.query.name;
 

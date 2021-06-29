@@ -45,9 +45,10 @@ module.exports = (sequelize, dataTypes) => {
         defaultValue: null,
       },
       recurrency: {
-        type: dataTypes.STRING, // monthly
+        type: dataTypes.STRING,
         allowNull: true,
         defaultValue: null,
+        // Values: monthly, bimonthly, weekly, yearly.
       },
       longDate: {
         type: dataTypes.DATE,

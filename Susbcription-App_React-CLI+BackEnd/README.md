@@ -37,7 +37,7 @@ $ npm i
 
 ### Tecnologies
 
-##### Main language: 
+##### Main language:
 
 > JavaScript
 
@@ -69,7 +69,7 @@ $ npm i
 
 #### Database.
 
-> Database schema `subs_db`. Image generator: [diagram.io](https://dbdiagram.io)  
+> Database schema `subs_db`. Image generator: [diagram.io](https://dbdiagram.io)
 
 ![db_schema](../Images_docs/db_schema.png)
 
@@ -88,3 +88,13 @@ $ npm i
 - [ ] REST-API: Use the colors, create relations between tables.
 - [ ] Seeders: Insert initial colors in db from Json.
 - [ ] Seeders: Insert initial brands in db from Json.
+
+### Author
+
+Written by Andrew Chilton
+
+### License
+
+MIT. See LICENSE for more details.
+
+(Ends)
