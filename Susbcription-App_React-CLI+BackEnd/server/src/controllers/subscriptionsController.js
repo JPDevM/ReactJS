@@ -2,7 +2,7 @@
 // Node.JS CONTROLLER subscription //
 // ------------------------------- //
 const chalk = require('chalk');
-console.log(chalk.white.bgRed('Hello world!'));
+console.log(chalk.white.bgRed('Probando chalk'));
 
 // Import models into controller.
 // A the destructuring, using the table name in the model.
