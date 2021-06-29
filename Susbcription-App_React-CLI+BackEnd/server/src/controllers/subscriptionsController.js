@@ -1,16 +1,15 @@
 // ------------------------------- //
 // Node.JS CONTROLLER subscription //
 // ------------------------------- //
+const chalk = require('chalk');
+console.log(chalk.white.bgRed('Hello world!'));
 
 // Import models into controller.
 // A the destructuring, using the table name in the model.
 const { subscription } = require('../database/models');
 
 // Helpers Functions
-const {
-  nextPaymentDates,
-  previousPaymentDates,
-} = require('../helperFn/calculateDate');
+const { setPaymentDates } = require('../helperFn/calculateDate');
 const { all } = require('../routes/staticRouter');
 
 // temporal variables for test
@@ -29,30 +28,32 @@ const { all } = require('../routes/staticRouter');
 module.exports = {
   // BROWSE --> See all. ('.../')
   browse: async (request, response) => {
+    
     try {
       const allSubscription = await subscription.findAll();
+      
+      let finalSubscriptions = [];
       // Success
       // add dates
-      for (const oneSubscription in allSubscription) {
-        let firstPayment = allSubscription[oneSubscription].firstPayment;
-        let recurrency = allSubscription[oneSubscription].recurrency;
-        let longDate = allSubscription[oneSubscription].longDate;
+      for (const oneSubscription of allSubscription) {
+        let subscriptionCopy = oneSubscription.dataValues; // hacemos copia de un objeto inmutable
+        
+        let firstPayment = subscriptionCopy.firstPayment;
+        let recurrency = subscriptionCopy.recurrency;
+        let longDate = subscriptionCopy.longDate;
+        
+        subscriptionCopy.nextPaymentDates = firstPayment ? setPaymentDates(firstPayment, recurrency, longDate) : null;
+        subscriptionCopy.previousPaymentDates = longDate ? setPaymentDates(firstPayment, recurrency, longDate, 'prev') : null;
 
-        allSubscription[oneSubscription].push(
-          nextPaymentDates(firstPayment, recurrency, longDate, 5)
-        );
-        allSubscription[oneSubscription].push(
-          previousPaymentDates(firstPayment, recurrency, longDate, 5)
-        );
+        finalSubscriptions.push(subscriptionCopy);
       }
+
       return response.json({
         metadata: {
-          // test1: nextPaymentDates(firstPayment, recurrency, longDate, 5),
-          // test2: previousPaymentDates(firstPayment, recurrency, longDate, 5),
           status: 200,
           message: 'Success',
         },
-        data: allSubscription,
+        data: finalSubscriptions,
       });
     } catch (error) {
       // Fail
