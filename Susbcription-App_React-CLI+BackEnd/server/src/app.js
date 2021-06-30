@@ -22,9 +22,10 @@ const HOST = process.env.APP_HOST;
 app.listen(
   PORT,
   log(
-    chalk.green(
-      `Hi ${USER}, have a nice day! the server is now live in http://${HOST}:${PORT}/`
-    )
+    `Hi ` +
+      chalk.green(`${USER}`) +
+      `, have a nice day! the server is now live in ` +
+      chalk.green(`http://${HOST}:${PORT}/`)
   )
 );
 
