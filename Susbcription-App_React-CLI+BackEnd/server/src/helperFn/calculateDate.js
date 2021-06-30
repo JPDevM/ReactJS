@@ -2,7 +2,11 @@
 // Node.JS Helper calculateDate    //
 // ------------------------------- //
 var moment = require('moment'); // https://momentjs.com/docs/
-require('moment-recur'); // https://github.com/c-trimm/moment-recur, https://github.com/bbqsrc/moment-recur2
+require('moment-recur'); // https://github.com/c-trimm/moment-recur
+
+// Developer dependencies
+const chalk = require('chalk');
+const log = console.log;
 
 module.exports = {
   // Output:
@@ -35,11 +39,11 @@ module.exports = {
           break;
       }
       const date = type === 'next' ? recurrence.next(count, moment.defaultFormat) : recurrence.previous(count, moment.defaultFormat);
-      // console.log(date);
+      // log(date);
       return date;
     }
 
-    console.log('No hay fecha macho');
+    log('No hay fecha macho');
     return null;
   }
 };
