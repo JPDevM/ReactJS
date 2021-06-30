@@ -2,8 +2,7 @@
 // Node.JS Helper calculateDate    //
 // ------------------------------- //
 var moment = require('moment'); // https://momentjs.com/docs/
-require('moment-recur'); // https://github.com/c-trimm/moment-recur, https://github.com/bbqsrc/moment-recur2
-
+require('moment-recur'); // https://github.com/c-trimm/moment-recur
 module.exports = {
   // Output:
   // nextPaymentDates[n] ['July 12, 2021','June 12, 2021',...,]

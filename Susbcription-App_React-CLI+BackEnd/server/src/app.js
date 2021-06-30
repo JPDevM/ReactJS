@@ -6,6 +6,9 @@ const fs = require('fs');
 const methodOverride = require('method-override'); // To make PUT requests in Express.
 const session = require('express-session');
 const path = require('path');
+// Develop packages
+const chalk = require('chalk');
+const log = console.log;
 
 require('dotenv').config({ path: './.env' }); // enviroment variables .env
 
@@ -14,12 +17,14 @@ require('dotenv').config({ path: './.env' }); // enviroment variables .env
 const app = express();
 // Welcome menssaje
 const USER = process.env.USER_NAME;
-const PORT = process.env.APP_PORT || 3000 ;
+const PORT = process.env.APP_PORT || 3000;
 const HOST = process.env.APP_HOST;
 app.listen(
   PORT,
-  console.log(
-    `Hi ${USER}, have a nice day! the server is now live in http://${HOST}:${PORT}/`
+  log(
+    chalk.green(
+      `Hi ${USER}, have a nice day! the server is now live in http://${HOST}:${PORT}/`
+    )
   )
 );
 
