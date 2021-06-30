@@ -5,8 +5,11 @@
 // Import models into controller.
 // A the destructuring, using the table name in the model.
 const { user } = require('../database/models');
-
 const bcrypt = require('bcryptjs');
+
+// Developer dependencies
+const chalk = require('chalk');
+const log = console.log;
 
 module.exports = {
   // BROWSE --> See all. ('.../')
@@ -133,7 +136,7 @@ module.exports = {
   // Profile view ('.../profile)
   profile: async (request, response) => {
     const user = request.session.userLogged;
-    console.log(user);
+    log(user);
     return response.render('index', user);
   },
 

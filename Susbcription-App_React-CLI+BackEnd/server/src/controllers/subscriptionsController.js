@@ -1,8 +1,6 @@
 // ------------------------------- //
 // Node.JS CONTROLLER subscription //
 // ------------------------------- //
-const chalk = require('chalk');
-console.log(chalk.white.bgRed('Probando chalk'));
 
 // Import models into controller.
 // A the destructuring, using the table name in the model.
@@ -12,18 +10,9 @@ const { subscription } = require('../database/models');
 const { setPaymentDates } = require('../helperFn/calculateDate');
 const { all } = require('../routes/staticRouter');
 
-// temporal variables for test
-// var firstPayment = '2020-02-12 07:37:42';
-// var recurrency = 'monthly';
-// var longDate = '2021-10-30 12:19:29';
-// console.log(
-//   'nextPaymentDates: ',
-//   nextPaymentDates(firstPayment, recurrency, longDate, 3)
-// );
-// console.log(
-//   'previousPaymentDates: ',
-//   previousPaymentDates(firstPayment, recurrency, longDate, 3)
-// );
+// Developer dependencies
+const chalk = require('chalk');
+const log = console.log;
 
 module.exports = {
   // BROWSE --> See all. ('.../')
