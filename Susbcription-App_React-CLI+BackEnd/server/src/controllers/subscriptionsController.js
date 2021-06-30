@@ -25,16 +25,16 @@ module.exports = {
       // Success
       // add dates
       for (const oneSubscription of allSubscription) {
-        let subscriptionCopy = oneSubscription.dataValues; // hacemos copia de un objeto inmutable
+        let subscriptionEdited = oneSubscription.dataValues; // Inmutable objet from sequelize. Need a copy.
         
-        let firstPayment = subscriptionCopy.firstPayment;
-        let recurrency = subscriptionCopy.recurrency;
-        let longDate = subscriptionCopy.longDate;
+        let firstPayment = subscriptionEdited.firstPayment;
+        let recurrency = subscriptionEdited.recurrency;
+        let longDate = subscriptionEdited.longDate;
         
-        subscriptionCopy.nextPaymentDates = firstPayment ? setPaymentDates(firstPayment, recurrency, longDate) : null;
-        subscriptionCopy.previousPaymentDates = longDate ? setPaymentDates(firstPayment, recurrency, longDate, 'prev') : null;
+        subscriptionEdited.nextPaymentDates = firstPayment ? setPaymentDates(firstPayment, recurrency, longDate) : null;
+        subscriptionEdited.previousPaymentDates = longDate ? setPaymentDates(firstPayment, recurrency, longDate, 'prev') : null;
 
-        finalSubscriptions.push(subscriptionCopy);
+        finalSubscriptions.push(subscriptionEdited);
       }
 
       return response.json({
