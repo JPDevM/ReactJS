@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: antiquewhite;
+}
+
+.main-title {
+	text-align: center;
+	font-weight: normal;
+	color: red;
+}
