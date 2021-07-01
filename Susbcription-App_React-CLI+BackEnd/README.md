@@ -81,13 +81,13 @@ $ npm i
 - [x] Implemen git flow.
 - [x] REST-API: Subscription methods.
 - [x] REST-API: Promotions methods.
+- [ ] Seeders: Insert initial colors in db from Json.
+- [ ] Seeders: Insert initial brands in db from Json.
+- [ ] REST-API: Use the colors, create relations between tables.
 - [ ] REST-API: Validate incoming data for Subscription method (edit, create, delete).
 - [ ] REST-API: Validate incoming data for promotion method (edit, create, delete).
 - [ ] REST-API: User methods.
 - [ ] REST-API: Do the mockups.
-- [ ] REST-API: Use the colors, create relations between tables.
-- [ ] Seeders: Insert initial colors in db from Json.
-- [ ] Seeders: Insert initial brands in db from Json.
 
 ### Author
 

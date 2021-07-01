@@ -1,9 +1,13 @@
+// Developer dependencies
+const chalk = require('chalk');
+const log = console.log;
+
 // Capturamos el formulario
 let subscriptionForm = document.querySelector('#addCustomSubscriptionForm');
 let formFields = Array.from(subscriptionForm.elements); // Convertimos a array
 formFields.pop(); // Sacamos el botón
 
-console.log(formFields);
+log(formFields);
 
 // Función que controla si el campo está vacío
 // const isEmpty = (e) => {
@@ -43,7 +47,7 @@ console.log(formFields);
 
 //   // Si no pasa el test de ser un formato de correo electrónico
 //   if (!regex.test(inputValue)) {
-//     console.log('el email no cumple con el formato');
+//     log('el email no cumple con el formato');
 //     // si NO es un formato de correo electrónico
 //     input.classList.remove('is-valid');
 //     input.classList.add('is-invalid');
@@ -85,9 +89,9 @@ console.log(formFields);
 //   radioButton.addEventListener('change', (e) => {
 //     let aceptConditions = e.target.value;
 //     if (aceptConditions === 'true') {
-//       console.log('Aceptó');
+//       log('Aceptó');
 //     } else {
-//       console.log('No aceptó');
+//       log('No aceptó');
 //     }
 //   });
 // });
@@ -105,7 +109,7 @@ console.log(formFields);
 //       // Hacer un filter, para eliminar el valor agregado
 //       genderValues = genderValues.filter((gender) => gender != checkboxValue);
 //     }
-//     console.log(genderValues);
+//     log(genderValues);
 //   });
 // });
 
@@ -167,11 +171,11 @@ console.log(formFields);
 //   let file = e.target.files[0];
 //   let fileSize = Math.ceil(file.size / 1024);
 //   if (fileSize > 1024) {
-//     console.log(fileSize);
-//     console.log('El archivo es muy pesado');
+//     log(fileSize);
+//     log('El archivo es muy pesado');
 //   }
 //   let extension = file.type.split('/').pop();
 //   if (!['png', 'jpg', 'jpeg', 'gif'].includes(extension)) {
-//     console.log('extension NO aceptada');
+//     log('extension NO aceptada');
 //   }
 // });
