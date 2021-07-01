@@ -22,8 +22,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon ./src/app.js",
-    "dbStart": "cd src/ && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
-    "sass": "sass --watch src/scss:public/css"
+    "dbStart": "cd src/ && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
   },
   "author": "JPDevM",
   "license": "MIT"

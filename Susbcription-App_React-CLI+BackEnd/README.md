@@ -73,8 +73,13 @@ $ npm i
 
 ![db_schema](../Images_docs/db_schema.png)
 
-### TO-DOs
+#### Desing.
+> FAVICON this icon was only an inspiration. 
 
+![favicon](../Images_docs/favico.png)
+
+### TO-DOs
+> Server
 - [x] Create Sass script.
 - [x] Install React.
 - [x] Create a Bitbuket Readme for the workflow.
@@ -89,12 +94,15 @@ $ npm i
 - [ ] REST-API: User methods.
 - [ ] REST-API: Do the mockups.
 
+> Client
+- [ ] Implementar Sass.
+
 ### Author
 
-Written by Andrew Chilton
+Written by Devecchi Martinengo, Juan Pablo.
 
 ### License
 
-MIT. See LICENSE for more details.
+MIT. See [LICENSE](server/LICENSE) for more details.
 
 (Ends)
