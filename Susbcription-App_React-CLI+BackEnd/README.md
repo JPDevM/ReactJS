@@ -95,7 +95,10 @@ $ npm i
 - [ ] REST-API: Do the mockups.
 
 > Client
+- [x] Add favicon.
+- [ ] Create main components.
 - [ ] Implementar Sass.
+
 
 ### Author
 

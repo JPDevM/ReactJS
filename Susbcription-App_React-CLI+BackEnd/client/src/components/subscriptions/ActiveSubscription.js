@@ -2,9 +2,6 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
-// CSS Custom Styles
-// import '../../../public/css/app.css';
-
 const ActiveSubscription = props => {
   const { subscriptionData } = props;
   

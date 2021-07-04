@@ -6,14 +6,15 @@ import { Switch, Route, Link } from "react-router-dom";
 import Menu from './Menu';
 import Main from './Main';
 import Footer from './Footer';
-import SettingMenu from './sttings/SettingMenu';
+import SettingMenu from './settings/SettingMenu';
 
-// ActiveSubscriptionDB
+// ActiveSubscriptionDB Doesn't work
  fetch('http://localhost:5000/subscriptions')
     .then((response) => response.json())
     .then((data) => {
       return data.status;
     }).catch((error) => console.log(error));
+
 const App = () => {
 
   const [location, setLocation] = useState('/');

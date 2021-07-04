@@ -8,7 +8,7 @@
 
 #### Subscription app + backend.
 
-> In the folder `Susbcription-App_React-CLI+BackEnd`. [folder](./Susbcription-App_React-CLI+BackEnd).
+> In the foldemager `Susbcription-App_React-CLI+BackEnd`. [folder](./Susbcription-App_React-CLI+BackEnd).
 
 BackEnd: `Node.JS`, `Express.JS`, `MySQL`, `Sequelize`.
 
@@ -26,7 +26,8 @@ DevOps: `Gitflow Workflow`.
 
 ## Artículos
 
-[React.js Resourses](./React.js%20Resourses.md)
+[React.js Resourses](./React.js-Resourses.md)
 
-[Workflow to create frontend with ReactJS](Workflow%20to%20create%20frontend%20with%20ReactJS.md)
+[Workflow to create frontend with ReactJS](Workflow-to-create-frontend-with-ReactJS.md)
 
+[Simplifying React Hooks](Simplifying-React-Hooks.md)

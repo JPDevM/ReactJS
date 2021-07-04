@@ -2,7 +2,6 @@
 // import { faCog, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Menu = props => {
-  // const { movieData } = props;
   const { activeSection } = props;
   console.log(`Estamos en el componente Menu.js y la sección: ${activeSection}`);
 	return (
