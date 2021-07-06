@@ -1,10 +1,11 @@
+import React from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCog, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Menu = (props) => {
   const { activeSection } = props;
-  console.log('Rendered Component: Menu');
-  console.log('activeSection: ', JSON.stringify({ activeSection }));
+  // console.log('Rendered Component: Menu');
+  // console.log('activeSection: ', JSON.stringify({ activeSection }));
 
   return (
     <header>

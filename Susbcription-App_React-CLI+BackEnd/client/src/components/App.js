@@ -10,6 +10,7 @@ import Menu from './Menu';
 import Main from './Main';
 import Footer from './Footer';
 import SettingMenu from './settings/SettingMenu';
+import MostrarRespuesta from './MostrarRespuesta';
 
 // Get Subscriptions from DB
 // fetch('http://localhost:5000/subscriptions')
@@ -17,7 +18,7 @@ import SettingMenu from './settings/SettingMenu';
 
 const App = () => {
   // fetch subscriptions from the API when component mounts
-  const [subscription, setSubscriptions] = useState([]);
+  const [subscription, setSubscriptions] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -27,15 +28,14 @@ const App = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        const subscription = setSubscriptions(data);
-        console.log(subscription);
+        setSubscriptions(data.data);
       } catch (error) {
         console.log('error', error);
       }
     };
 
     fetchSubscriptions();
-  }, []);
+  }, [subscription]);
 
   // Router
   const [location, setLocation] = useState('/');
@@ -46,6 +46,15 @@ const App = () => {
 
   return (
     <div className="App">
+      <MostrarRespuesta/>
+      { !subscription && <p>Cargando...</p> }
+      {/* { subscription && subscription.map((subscription, index) => <p key={index}>{subscription.name}</p>) } */}
+      { 
+        subscription && 
+        subscription
+          .filter(subscription => subscription.isActive === 0) 
+          .map((subscription, index) => <p key={index}>{subscription.name}</p>)
+      }
       <ul>
         <li>
           <Link to="/" onClick={() => setLocation('/')}>
