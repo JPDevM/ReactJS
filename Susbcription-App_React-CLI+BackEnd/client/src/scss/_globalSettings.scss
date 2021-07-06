@@ -3,6 +3,40 @@
  Global Settings  
 ╚══════nn════════════╝ */
 
+/* Default colors */
+body {
+  --text-color: $darkColor;
+  --bkg-color: $lightColor;
+  
+  /* Dark theme colors */
+  .dark-theme {
+    --text-color: $lightColor;
+    --bkg-color: $darkColor;
+  }
+
+  /* Flash theme colors */
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+// Tod
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body { 
+    --text-color: $lightColor;
+    --bkg-color: $darkColor;
+    
+    /* Override dark mode with light mode styles if the user decides to swap */
+    .light-theme {
+      --text-color: $darkColor;
+      --bkg-color: $lightColor;
+    }
+    .flash-theme {
+    --text-color: $lightColor;
+    --bkg-color: $darkColor;
+  }
+  }
+}
+
 // Bootstrap changes
 .bg-dark {
   background-color: #000 !important;
@@ -10,7 +44,7 @@
 
 // Custom changes
 body {
-  background-color: black;
+  background-color: $darkColor;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
