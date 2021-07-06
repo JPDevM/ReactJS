@@ -1,6 +1,9 @@
 // Packages
 import React, { useEffect, useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import axios from 'axios';
+
+ // Developer dependencies
 
 // Components.
 import Menu from './Menu';
@@ -8,13 +11,9 @@ import Main from './Main';
 import Footer from './Footer';
 import SettingMenu from './settings/SettingMenu';
 
-//ActiveSubscriptionDB Doesn't work
+// Get Subscriptions from DB
 // fetch('http://localhost:5000/subscriptions')
-//   .then((response) => response.json())
-//   .then((data) => {
-//     return data.status;
-//   })
-//   .catch((error) => console.log(error));
+
 
 const App = () => {
   // fetch subscriptions from the API when component mounts
@@ -24,7 +23,7 @@ const App = () => {
   useEffect(() => {
     const url = 'http://localhost:5000/subscriptions';
 
-    const fetchData = async () => {
+    const fetchSubscriptions = async () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
@@ -35,11 +34,12 @@ const App = () => {
       }
     };
 
-    fetchData();
+    fetchSubscriptions();
   }, []);
 
+  // Router
   const [location, setLocation] = useState('/');
-
+  
   useEffect(() => {
     console.log(location);
   }, [location]);
@@ -77,7 +77,7 @@ const App = () => {
         </Route>
 
         <Route path="/">
-          <Main allSubscriptions = { subscription } />
+          <Main allSubscriptions={subscription} />
           <Footer />
         </Route>
 
