@@ -95,9 +95,15 @@ $ npm i
 - [ ] REST-API: Do the mockups.
 
 > Client
-- [x] Add favicon.
-- [ ] Create main components.
-- [ ] Implementar Sass.
+- [ ] Install React.JS
+- [ ] Clear react.
+- [ ] Install Dependencies.
+- [ ] Ceate a folder structure.
+- [ ] Get main data from db using hooks.
+- [ ] Create main components using arrow funtions.
+- [ ] Update components with props.
+- [ ] Create a loading componets for each one.
+- [ ] Implement Sass.
 
 
 ### Author
