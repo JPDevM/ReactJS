@@ -95,10 +95,10 @@ $ npm i
 - [ ] REST-API: Do the mockups.
 
 > Client
-- [ ] Install React.JS
-- [ ] Clear react.
-- [ ] Install Dependencies.
-- [ ] Ceate a folder structure.
+- [x] Install React.JS
+- [x] Clear react.
+- [x] Install Dependencies.
+- [x] Ceate a folder structure.
 - [ ] Get main data from db using hooks.
 - [ ] Create main components using arrow funtions.
 - [ ] Update components with props.
