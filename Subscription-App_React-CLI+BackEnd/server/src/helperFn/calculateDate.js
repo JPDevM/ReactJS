@@ -53,10 +53,11 @@ module.exports = {
       return date;
     }
 
-    log(
-      chalk.bgRed('the function setPaymentDates need date.') +
-        chalk.red('File: server/src/helperFn/calculateDate.js')
-    );
+    // log(
+    //   chalk.bgRed('the function setPaymentDates need date.') +
+    //   chalk.red('File: server/src/helperFn/calculateDate.js')
+    // );
+
     return null;
   },
 };
