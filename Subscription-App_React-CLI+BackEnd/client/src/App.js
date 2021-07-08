@@ -5,6 +5,8 @@ import './assets/css/bootstrap.min.css';
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import ClassComponent from './components/ClassComponent';
+import HookComponent from './components/HookComponent';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
 
 function App() {
@@ -20,32 +22,47 @@ function App() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setSubscriptions(data.data);
+
+        let activeSubscriptions = data.data.filter(oneSub => oneSub.isActive === 1);
+        console.log(activeSubscriptions);
+        
+        let inActiveSubscriptions = data.data.filter(oneSub => oneSub.isActive === 0);
+        console.log(inActiveSubscriptions);
+
+        setSubscriptions({ active: activeSubscriptions, inActive: inActiveSubscriptions});
       } catch (error) {
         console.log('error', error);
       }
     };
 
     fetchSubscriptions();
-  }, [subscription]);
+  }, []);
 
   return (
     <React.Fragment>
+      <ClassComponent/>
+      <hr />
+      <HookComponent/>
+      <hr />
       <Navbar activeSection={'/'} />
       <p>
         <mark>Aquí comienza ActiveSubscriptionsList</mark>
       </p>
       {!subscription && <p>Cargando...</p>}
       {/* Poner aquí el componente vacío */}
-      {subscription &&
-        subscription
-          .filter((subscription) => subscription.isActive === 0)
-          .map((subscription, index) => (
-            <ActiveSubscriptionsList
-              key={index}
-              activeSubscription={subscription}
-            />
-          ))}
+      {subscription && (
+        <>
+          <h2>Inactivas</h2>
+          { subscription.inActive.map((subscription, index) => <ActiveSubscriptionsList key={index} activeSubscription={subscription} />) }
+        </>
+      )}
+
+      {subscription && (
+        <>
+          <h2>Activas</h2>
+          { subscription.active.map((subscription, index) => <ActiveSubscriptionsList key={index} activeSubscription={subscription} />) }
+        </>
+      )}
 
       {/* Calculate monthly payment */}
       {/* {subscription && setAmount(amount + subscription.price)}
