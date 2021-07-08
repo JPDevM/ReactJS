@@ -1,5 +1,7 @@
 import { Component, Fragment } from 'react';
 
+import './_index.scss';
+
 class ClassComponent extends Component {
 	/*
 		Component State
