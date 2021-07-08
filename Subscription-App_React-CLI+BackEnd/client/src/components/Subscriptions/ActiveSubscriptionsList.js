@@ -5,12 +5,12 @@ const ActiveSubscriptionsList = (props) => {
   const { activeSubscription } = props;
   const {
     name,
-    logo,
     description,
     price,
     firstPayment,
     currency,
     style,
+    logo,
     userId,
     colorId,
   } = activeSubscription;
@@ -27,10 +27,7 @@ const ActiveSubscriptionsList = (props) => {
         {/* <a  id="cardUser" 
               href="/">  Routear a editar esta card */}
         <div id="cardRow" className="row mx-0">
-          {/* Logo */}
-          <div className="col-2">
-            <i class="fas fa-amazon"></i>
-          </div>
+          { logo }
 
           {/* Name */}
           <div id="cardUserCenter" className="col-6">
