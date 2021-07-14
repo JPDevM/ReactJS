@@ -11,7 +11,7 @@ import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscripti
 
 function App() {
   const [subscription, setSubscriptions] = useState(null);
-  const [amount, setAmount] = useState(null);
+  // const [amount, setAmount] = useState(null);
   // const [error, setError] = useState(null);
   
   useEffect(() => {
