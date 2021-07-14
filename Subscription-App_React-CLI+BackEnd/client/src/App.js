@@ -40,10 +40,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <ClassComponent/>
+      {/* <ClassComponent/>
       <hr />
       <HookComponent/>
-      <hr />
+      <hr /> */}
       <Navbar activeSection={'/'} />
       <p>
         <mark>Aquí comienza ActiveSubscriptionsList</mark>
