@@ -1,5 +1,5 @@
-import React from 'react';
-import './ActiveSubscriptionsList.css';
+import React, { Fragment } from 'react';
+import './_activeSubscriptionsList.scss';
 
 const ActiveSubscriptionsList = (props) => {
   const { activeSubscription } = props;
@@ -7,27 +7,31 @@ const ActiveSubscriptionsList = (props) => {
     name,
     description,
     price,
-    firstPayment,
-    currency,
-    style,
+    currencySymbol,
     logo,
-    userId,
-    colorId,
+    color,
+    nextPaymentDates,
+    previousPaymentDates,
   } = activeSubscription;
+  const { mainColor, secondColor, darkColor, lightColor } = color;
 
   // listado de subscripciones
   return (
-    <React.Fragment>
+    <Fragment>
       <li
-        className={`my-2 rounded subCard`}
+        className={`my-1 rounded subCard`}
         style={{
-          backgroundColor: style ? style : 'green',
+          backgroundColor: mainColor ? mainColor : 'green',
         }}
       >
         {/* <a  id="cardUser" 
               href="/">  Routear a editar esta card */}
         <div id="cardRow" className="row mx-0">
-          { logo }
+          <img
+            src={logo}
+            className="img-fluid brand-logo m-2"
+            alt="brand logo"
+          />
 
           {/* Name */}
           <div id="cardUserCenter" className="col-6">
@@ -52,19 +56,21 @@ const ActiveSubscriptionsList = (props) => {
               <div className="col-12">
                 {/* Price */}
                 <p className="text-right my-0 text-truncate">
-                  {currency} <strong>{price}</strong>
+                  {currencySymbol} <strong>{price}</strong>
                 </p>
               </div>
               <div className="col-12">
                 {/* Days to payment */}
-                <p className="text-right my-0 text-truncate">{firstPayment}</p>
+                <p className="text-right my-0 text-truncate">
+                  {nextPaymentDates}
+                </p>
               </div>
             </div>
           </div>
         </div>
         {/* </a> */}
       </li>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
