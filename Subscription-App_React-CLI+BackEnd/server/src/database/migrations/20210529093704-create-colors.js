@@ -9,9 +9,21 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      colorHexa: {
+      mainColor: {
         type: Sequelize.STRING,
-        allowNull: false, // MUST have a value. Set defaultValue
+        allowNull: true, // MUST have a value. Set defaultValue
+      },
+      secondColor: {
+        type: Sequelize.STRING,
+        allowNull: true, // MUST have a value. Set defaultValue
+      },
+      darkColor: {
+        type: Sequelize.STRING,
+        allowNull: true, // MUST have a value. Set defaultValue
+      },
+      lightColor: {
+        type: Sequelize.STRING,
+        allowNull: true, // MUST have a value. Set defaultValue
       },
       createdAt: {
         allowNull: false,

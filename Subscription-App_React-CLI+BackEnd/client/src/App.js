@@ -5,31 +5,39 @@ import './assets/css/bootstrap.min.css';
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import ClassComponent from './components/ClassComponent';
-import HookComponent from './components/HookComponent';
+// import ClassComponent from './components/ClassComponent';
+// import HookComponent from './components/HookComponent';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
+import EmptySubscriptionsList from './components/Subscriptions/EmptySubscriptionsList';
 
 function App() {
   const [subscription, setSubscriptions] = useState(null);
   // const [amount, setAmount] = useState(null);
   // const [error, setError] = useState(null);
-  
+
   useEffect(() => {
     const url = 'http://localhost:5000/subscriptions';
-    
+
     // fetch subscriptions from the API when component mounts
     const fetchSubscriptions = async () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
 
-        let activeSubscriptions = data.data.filter(oneSub => oneSub.isActive === 1);
-        console.log(activeSubscriptions);
-        
-        let inActiveSubscriptions = data.data.filter(oneSub => oneSub.isActive === 0);
-        console.log(inActiveSubscriptions);
+        let activeSubscriptions = data.data.filter(
+          (oneSub) => oneSub.isActive === 1
+        );
+        // console.log(activeSubscriptions);
 
-        setSubscriptions({ active: activeSubscriptions, inActive: inActiveSubscriptions});
+        let inActiveSubscriptions = data.data.filter(
+          (oneSub) => oneSub.isActive === 0
+        );
+        // console.log(inActiveSubscriptions);
+
+        setSubscriptions({
+          active: activeSubscriptions,
+          inActive: inActiveSubscriptions,
+        });
       } catch (error) {
         console.log('error', error);
       }
@@ -40,27 +48,37 @@ function App() {
 
   return (
     <React.Fragment>
-      <ClassComponent/>
+      {/* <ClassComponent/>
       <hr />
       <HookComponent/>
-      <hr />
+      <hr /> */}
       <Navbar activeSection={'/'} />
-      <p>
-        <mark>Aquí comienza ActiveSubscriptionsList</mark>
-      </p>
-      {!subscription && <p>Cargando...</p>}
-      {/* Poner aquí el componente vacío */}
-      {subscription && (
+
+      {/* Inactive subscriptions */}
+      {/* {subscription && (
         <>
           <h2>Inactivas</h2>
-          { subscription.inActive.map((subscription, index) => <ActiveSubscriptionsList key={index} activeSubscription={subscription} />) }
+          {subscription.inActive.map((subscription, index) => (
+            <ActiveSubscriptionsList
+              key={index}
+              inActiveSubscriptions={subscription}
+            />
+          ))}
         </>
-      )}
+      )} */}
 
+      {/* Empty component */}
+      {!subscription && <EmptySubscriptionsList />}
+
+      {/* Active subscriptions */}
       {subscription && (
         <>
-          <h2>Activas</h2>
-          { subscription.active.map((subscription, index) => <ActiveSubscriptionsList key={index} activeSubscription={subscription} />) }
+          {subscription.active.map((subscription, index) => (
+            <ActiveSubscriptionsList
+              key={index}
+              activeSubscription={subscription}
+            />
+          ))}
         </>
       )}
 

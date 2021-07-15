@@ -7,7 +7,10 @@ module.exports = {
     const fakeColors = [];
     for (let i = 1; i <= 50; i++) {
       fakeColors.push({
-        colorHexa: faker.internet.color(), // FF8822
+        mainColor: faker.internet.color(), // FF8822
+        secondColor: faker.internet.color(), // FF8822
+        darkColor: faker.internet.color(), // FF8822
+        lightColor: faker.internet.color(), // FF8822
         createdAt: new Date(),
         updatedAt: new Date(),
       });

@@ -17,22 +17,27 @@ const log = console.log;
 module.exports = {
   // BROWSE --> See all. ('.../')
   browse: async (request, response) => {
-    
     try {
-      const allSubscription = await subscription.findAll();
-      
+      const allSubscription = await subscription.findAll({
+        include: ['color'],
+      });
+
       let finalSubscriptions = [];
       // Success
-      // add dates
+      // Add Prev, Next dates.
       for (const oneSubscription of allSubscription) {
         let subscriptionEdited = oneSubscription.dataValues; // Inmutable objet from sequelize. Need a copy.
-        
+
         let firstPayment = subscriptionEdited.firstPayment;
         let recurrency = subscriptionEdited.recurrency;
         let longDate = subscriptionEdited.longDate;
-        
-        subscriptionEdited.nextPaymentDates = firstPayment ? setPaymentDates(firstPayment, recurrency, longDate) : null;
-        subscriptionEdited.previousPaymentDates = longDate ? setPaymentDates(firstPayment, recurrency, longDate, 'prev') : null;
+
+        subscriptionEdited.nextPaymentDates = firstPayment
+          ? setPaymentDates(firstPayment, recurrency, longDate)
+          : null;
+        subscriptionEdited.previousPaymentDates = longDate
+          ? setPaymentDates(firstPayment, recurrency, longDate, 'prev')
+          : null;
 
         finalSubscriptions.push(subscriptionEdited);
       }
@@ -187,6 +192,7 @@ module.exports = {
     try {
       const oneSubscription = await subscription.findOne({
         where: { id: request.params.id },
+        include: ['color'],
       });
       // Success message.
       return response.json({
