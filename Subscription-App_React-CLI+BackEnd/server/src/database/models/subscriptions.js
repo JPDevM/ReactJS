@@ -65,6 +65,11 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false, // MUST have a value. Set defaultValue
         defaultValue: 'eur',
       },
+      currencySymbol: {
+        type: dataTypes.STRING, // eur
+        allowNull: false, // MUST have a value. Set defaultValue
+        defaultValue: '€',
+      },
       style: {
         type: dataTypes.ENUM('flash', 'white', 'black'),
         allowNull: true,

@@ -63,6 +63,11 @@ module.exports = {
         allowNull: true, // MUST have a value. Set defaultValue
         defaultValue: 'eur',
       },
+      currencySymbol: {
+        type: Sequelize.STRING, // true - false
+        allowNull: true, // MUST have a value. Set defaultValue
+        defaultValue: '€',
+      },
       style: {
         type: Sequelize.STRING,
         allowNull: true,

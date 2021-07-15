@@ -5,8 +5,8 @@ import './assets/css/bootstrap.min.css';
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import ClassComponent from './components/ClassComponent';
-import HookComponent from './components/HookComponent';
+// import ClassComponent from './components/ClassComponent';
+// import HookComponent from './components/HookComponent';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
 
 function App() {

@@ -8,9 +8,10 @@ module.exports = {
     const fakeSubscription = [];
 
     for (let i = 1; i <= 50; i++) {
+
       fakeSubscription.push({
-        isActive: 1, // FF8822
-        isPopular: 0,
+        isActive: Math.random() >= 0.3 ? 0 : 1, // 0 or 1
+        isPopular: Math.random() >= 0.3 ? 0 : 1, // if ( isActive =0 ): 0 or 1
         name: faker.company.companyName(), // Netflix
         logo: faker.image.imageUrl(), // no-image.png
         description: faker.lorem.sentence(),
@@ -20,6 +21,7 @@ module.exports = {
         longDate: faker.date.future(),
         notification: 0,
         currency: faker.finance.currencyCode(),
+        currencySymbol: faker.finance.currencySymbol(),
         style: 'white',
         userId: i,
         colorId: i,

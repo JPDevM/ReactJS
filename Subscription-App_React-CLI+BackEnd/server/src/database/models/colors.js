@@ -11,7 +11,19 @@ module.exports = (sequelize, dataTypes) => {
     // 2. attributes of the database to access. https://sequelize.org/v5/manual/data-types.html
     // Tips: don't use FLOAT, use DECIMAL instead. Don't use BOOLEAN, use INTEGER DEFAULT 0.
     {
-      colorHexa: {
+      mainColor: {
+        type: dataTypes.STRING,
+        allowNull: false, // MUST have a value. Set defaultValue
+      },
+      secondColor: {
+        type: dataTypes.STRING,
+        allowNull: false, // MUST have a value. Set defaultValue
+      },
+      darkColor: {
+        type: dataTypes.STRING,
+        allowNull: false, // MUST have a value. Set defaultValue
+      },
+      lightColor: {
         type: dataTypes.STRING,
         allowNull: false, // MUST have a value. Set defaultValue
       },
