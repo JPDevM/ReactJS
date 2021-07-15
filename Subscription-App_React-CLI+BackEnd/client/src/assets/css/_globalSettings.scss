@@ -1,0 +1,97 @@
+/* ☆ （ • •）☆
+╔uu══════════════════╗☆
+ Global Settings  
+╚══════nn════════════╝ */
+
+/* Default colors */
+body {
+  --text-color: $darkColor;
+  --bkg-color: $lightColor;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  
+  /* Dark theme colors */
+  .dark-theme {
+    --text-color: $lightColor;
+    --bkg-color: $darkColor;
+  }
+
+  /* Flash theme colors */
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+// Tod
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body { 
+    --text-color: $lightColor;
+    --bkg-color: $darkColor;
+    
+    /* Override dark mode with light mode styles if the user decides to swap */
+    .light-theme {
+      --text-color: $darkColor;
+      --bkg-color: $lightColor;
+    }
+    .flash-theme {
+    --text-color: $lightColor;
+    --bkg-color: $darkColor;
+  }
+  }
+}
+
+
+
+// Custom changes
+body {
+  background-color: $darkColor;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-link.active {
+  background-color: #000;
+  border: 0px;
+  border-bottom: #fff 1px solid;
+}
+
+.input-dark {
+  background-color: black;
+  color: white;
+  border: 0px;
+  border-radius: 0px;
+  &:focus {
+    background-color: black;
+    color: white;
+  }
+}
+
+.input-dark-strong {
+  background-color: black;
+  color: grey;
+  border: 0px;
+  border-radius: 0px;
+  &:focus {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* Card Styles */
+
+// #cardUser {}
+#cardRow {
+  color: white;
+}
+#cardLogo {
+  font-size: 2em;
+}
+// #cardUserCenter {}
+// #cardUserRight {}
+// #cardDefault {}
+// #cardDefaultCenter {}
+// #cardDefaultRight {}
+
+/* Setting Styles */

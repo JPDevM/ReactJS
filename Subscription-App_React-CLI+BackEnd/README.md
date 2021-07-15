@@ -103,8 +103,10 @@ $ npm i
 - [x] Create main components using arrow funtions.
 - [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
 - [ ] Update components with props.
-- [ ] Create a loading componets for each one.
-- [ ] Implement Sass.
+- [x] Create a loading componets.
+- [x] Implement Sass.
+- [ ] Sass: variables.
+- [ ] Sass: Media Queries Schema
 
 
 ### Author

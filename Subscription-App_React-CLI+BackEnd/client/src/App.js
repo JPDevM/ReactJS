@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './_app.scss';
+import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
 // Components
