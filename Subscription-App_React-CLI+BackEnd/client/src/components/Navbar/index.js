@@ -1,4 +1,4 @@
-import './Navbar.css';
+import './_navbar.scss';
 
 const Navbar = props => {
     const { activeSection } = props;

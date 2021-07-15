@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './_app.scss';
 import './assets/css/bootstrap.min.css';
 
 // Components
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 // import ClassComponent from './components/ClassComponent';
 // import HookComponent from './components/HookComponent';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
