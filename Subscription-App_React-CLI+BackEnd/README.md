@@ -80,34 +80,34 @@ $ npm i
 
 ### TO-DOs
 > Server
+- [ ] Seeders: Insert initial colors in db from Json.
+- [ ] Seeders: Insert initial brands in db from Json.
+- [ ] REST-API: Validate incoming data for Subscription method (edit, create, delete).
+- [ ] REST-API: Validate incoming data for promotion method (edit, create, delete).
+- [ ] REST-API: User methods.
+- [ ] REST-API: Do the mockups.
 - [x] Create Sass script.
 - [x] Install React.
 - [x] Create a Bitbuket Readme for the workflow.
 - [x] Implemen git flow.
 - [x] REST-API: Subscription methods.
 - [x] REST-API: Promotions methods.
-- [ ] Seeders: Insert initial colors in db from Json.
-- [ ] Seeders: Insert initial brands in db from Json.
-- [ ] REST-API: Use the colors, create relations between tables.
-- [ ] REST-API: Validate incoming data for Subscription method (edit, create, delete).
-- [ ] REST-API: Validate incoming data for promotion method (edit, create, delete).
-- [ ] REST-API: User methods.
-- [ ] REST-API: Do the mockups.
+- [X] REST-API: Use the colors, create relations between tables.
 
 > Client
+- [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
+- [ ] Update components with props.
+- [ ] Sass: variables.
+- [ ] Sass: Media Queries Schema
 - [x] Install React.JS
 - [x] Clear react.
 - [x] Install Dependencies.
 - [x] Ceate a folder structure.
 - [x] Get main data from db using hooks.
 - [x] Create main components using arrow funtions.
-- [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
-- [ ] Update components with props.
 - [x] Create a loading componets.
 - [x] Implement Sass.
-- [ ] Sass: variables.
-- [ ] Sass: Media Queries Schema
-
+- [X] set Favicon
 
 ### Author
 
