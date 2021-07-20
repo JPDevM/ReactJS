@@ -3,7 +3,7 @@ import './_footer.scss';
 const Footer = () => {
   return (
     <footer>
-      <div className="row fixed-bottom bg-dark mx-0 pb-4 align-items-center">
+      <div className="row fixed-bottom bg-dark mx-0 pb-4">
         <div className="col-7">
           <div className="row">
             <div className="col-12">
