@@ -27,7 +27,11 @@ function App() {
         let activeSubscriptions = data.data.filter(
           (oneSub) => oneSub.isActive === 1
         );
-        // console.log(activeSubscriptions);
+
+        let totalSubscriptions = activeSubscriptions.reduce((acum, sub) => {
+          return acum + Number(sub.price)
+        }, 0)
+        console.log(totalSubscriptions.toFixed(2));
 
         let inActiveSubscriptions = data.data.filter(
           (oneSub) => oneSub.isActive === 0
@@ -48,10 +52,10 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* <ClassComponent/>
+      {/* <ClassComponent/> */}
+      {/* <hr /> */}
+      {/* <HookComponent/> */}
       <hr />
-      <HookComponent/>
-      <hr /> */}
       <Navbar activeSection={'/'} />
 
       {/* Inactive subscriptions */}

@@ -27,28 +27,31 @@ module.exports = {
       // Add Prev, Next dates.
       for (const oneSubscription of allSubscription) {
         let subscriptionEdited = oneSubscription.dataValues; // Inmutable objet from sequelize. Need a copy.
-
-        let firstPayment = subscriptionEdited.firstPayment;
-        let recurrency = subscriptionEdited.recurrency;
-        let longDate = subscriptionEdited.longDate;
-
-        subscriptionEdited.nextPaymentDates = firstPayment
-          ? setPaymentDates(firstPayment, recurrency, longDate)
-          : null;
-        subscriptionEdited.previousPaymentDates = longDate
-          ? setPaymentDates(firstPayment, recurrency, longDate, 'prev')
-          : null;
-
-        finalSubscriptions.push(subscriptionEdited);
+        let { firstPayment, recurrency, longDate } = subscriptionEdited;
+        // let recurrency = subscriptionEdited.recurrency;
+        // let longDate = subscriptionEdited.longDate;
+        
+        subscriptionEdited.allDates = firstPayment ? await setPaymentDates(firstPayment, recurrency, longDate) : null;
+        
+        // subscriptionEdited.nextPaymentDates = firstPayment
+        //   ? setPaymentDates(firstPayment, recurrency, longDate)
+        //   : null;
+        // subscriptionEdited.previousPaymentDates = longDate
+        //   ? setPaymentDates(firstPayment, recurrency, longDate, 'prev')
+        //   : null;
+        
+        finalSubscriptions = [...finalSubscriptions, subscriptionEdited];
+        break
       }
-
-      return response.json({
-        metadata: {
-          status: 200,
-          message: 'Success',
-        },
-        data: finalSubscriptions,
-      });
+      
+      return response.json(finalSubscriptions);
+      // return response.json({
+      //   metadata: {
+      //     status: 200,
+      //     message: 'Success',
+      //   },
+      //   data: finalSubscriptions,
+      // });
     } catch (error) {
       // Fail
       return response.status(500).json({

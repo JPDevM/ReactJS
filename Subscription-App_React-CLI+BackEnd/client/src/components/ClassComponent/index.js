@@ -14,7 +14,6 @@ class ClassComponent extends Component {
 		}
 	}
 
-
 	/* 
 		Life Cycle
 			• componentDidMount()
