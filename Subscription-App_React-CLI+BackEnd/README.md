@@ -86,6 +86,8 @@ $ npm i
 - [ ] REST-API: Validate incoming data for promotion method (edit, create, delete).
 - [ ] REST-API: User methods.
 - [ ] REST-API: Do the mockups.
+- [ ] REST-API: Resolve the ActiveSubscription from a new method of controller. Ordered with dates, separate withd monthz
+      Ej.: ActiveSubscription[CurrentMonth {}, NextMonth {}, ]
 - [x] Create Sass script.
 - [x] Install React.
 - [x] Create a Bitbuket Readme for the workflow.

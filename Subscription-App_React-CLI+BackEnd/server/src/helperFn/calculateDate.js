@@ -24,17 +24,17 @@ module.exports = {
   ) => {
     if (starDate && endDate) {
       // Configs
-      moment.defaultFormat = 'DD MMM';
+      moment.defaultFormat = 'DD MMM YY';
       moment.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
       // Setters
       switch (recurrencyFromDB) {
         // Create a recurrence
         case 'monthly':
-          var recurrence = moment(starDate).recur(endDate).every(3).days();
+          var recurrence = moment(starDate).recur(endDate).every(1).weeks();
           break;
 
         case 'bimonthly':
-          var recurrence = moment(starDate).recur(endDate).every(3).days();
+          var recurrence = moment(starDate).recur(endDate).every(2).months();
           break;
 
         case 'weekly':
