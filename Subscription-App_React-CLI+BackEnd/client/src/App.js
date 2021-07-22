@@ -1,98 +1,89 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom';
+
 import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import ClassComponent from './components/ClassComponent';
-// import HookComponent from './components/HookComponent';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
 import EmptySubscriptionsList from './components/Subscriptions/EmptySubscriptionsList';
 
+const About = ({text}) => <h2>Soy la sección ABOUT: {text}</h2>;
+
+const Contact = (props) => <h6>Llegaste a la sección CONTACT</h6>;
+
 function App() {
   const [subscription, setSubscriptions] = useState(null);
-  // const [amount, setAmount] = useState(null);
-  // const [error, setError] = useState(null);
+
+	let history = useHistory();
 
   useEffect(() => {
     const url = 'http://localhost:5000/subscriptions';
 
     // fetch subscriptions from the API when component mounts
-    const fetchSubscriptions = async () => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
+   //  const fetchSubscriptions = async () => {
+   //    try {
+   //      const response = await fetch(url);
+   //      const data = await response.json();
 
-        let activeSubscriptions = data.data.filter(
-          (oneSub) => oneSub.isActive === 1
-        );
+   //      let activeSubscriptions = data.data.filter(
+   //        (oneSub) => oneSub.isActive === 1
+   //      );
 
-        let totalSubscriptions = activeSubscriptions.reduce((acum, sub) => {
-          return acum + Number(sub.price)
-        }, 0)
-        console.log(totalSubscriptions.toFixed(2));
+   //      let totalSubscriptions = activeSubscriptions.reduce((acum, sub) => {
+   //        return acum + Number(sub.price)
+   //      }, 0)
+   //      console.log(totalSubscriptions.toFixed(2));
 
-        let inActiveSubscriptions = data.data.filter(
-          (oneSub) => oneSub.isActive === 0
-        );
-        // console.log(inActiveSubscriptions);
+   //      let inActiveSubscriptions = data.data.filter(
+   //        (oneSub) => oneSub.isActive === 0
+   //      );
+   //      // console.log(inActiveSubscriptions);
 
-        setSubscriptions({
-          active: activeSubscriptions,
-          inActive: inActiveSubscriptions,
-        });
-      } catch (error) {
-        console.log('error', error);
-      }
-    };
+   //      setSubscriptions({
+   //        active: activeSubscriptions,
+   //        inActive: inActiveSubscriptions,
+   //      });
+   //    } catch (error) {
+   //      console.log('error', error);
+   //    }
+   //  };
 
-    fetchSubscriptions();
+   //  fetchSubscriptions();
   }, []);
 
-  return (
-    <React.Fragment>
-      {/* <ClassComponent/> */}
-      {/* <hr /> */}
-      {/* <HookComponent/> */}
-      <hr />
-      <Navbar activeSection={'/'} />
+	return (
+		<Fragment>
+			<Navbar activeSection={'/'} history={history} />
+			
+			<Switch>
 
-      {/* Inactive subscriptions */}
-      {/* {subscription && (
-        <>
-          <h2>Inactivas</h2>
-          {subscription.inActive.map((subscription, index) => (
-            <ActiveSubscriptionsList
-              key={index}
-              inActiveSubscriptions={subscription}
-            />
-          ))}
-        </>
-      )} */}
+				<Route path='/' exact>
+					{!subscription && <EmptySubscriptionsList />}
 
-      {/* Empty component */}
-      {!subscription && <EmptySubscriptionsList />}
+					{/* Active subscriptions */}
+					{subscription && (
+						<>
+							{subscription.active.map((subscription, index) => (
+								<ActiveSubscriptionsList
+									key={index}
+									activeSubscription={subscription}
+								/>
+							))}
+						</>
+					)}
+				</Route>
+				
+				<Route path='/about' render={ () => <About text='Saludos a todos' /> } />
+				
+				<Route path='/contact' component={Contact} />
+			</Switch>
 
-      {/* Active subscriptions */}
-      {subscription && (
-        <>
-          {subscription.active.map((subscription, index) => (
-            <ActiveSubscriptionsList
-              key={index}
-              activeSubscription={subscription}
-            />
-          ))}
-        </>
-      )}
-
-      {/* Calculate monthly payment */}
-      {/* {subscription && setAmount(amount + subscription.price)}
-      {console.log(setAmount)} */}
-
-      <Footer />
-    </React.Fragment>
-  );
+			<Footer />
+		</Fragment>
+	);
 }
 
 export default App;

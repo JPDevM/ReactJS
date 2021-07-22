@@ -1,29 +1,22 @@
+import { NavLink } from 'react-router-dom';
+
 import './_navbar.scss';
 
 const Navbar = props => {
-    const { activeSection } = props;
+  let location = props.history.location.pathname;
+  console.log('Navbar Component');
+  console.log(location);
 
   return (
     <header>
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand text-white-50" href="setting.html">
-          {' '}
-          {/* Implementar router */}
-          {activeSection === '/' ? <i class="fa fa-cog"></i> : null}
-          {activeSection === 'settings' ? (
-            <i class="fa fa-plus"></i>
-          ) : null}
-        </a>
-        <span className="navbar-text text-white">
-          {activeSection === 'settings'
-            ? 'Configuraciones'
-            : 'My subscriptions'}
-        </span>
-        <a className="navbar-brand text-white-50" href="add_existing.html">
-          {' '}
-          {/* Implementar router */}
-          <i class="fa fa-plus"></i>
-        </a>
+        { 
+          location === '/' ? 
+          <NavLink className="navbar-brand text-white-50" to="/">Home</NavLink> :
+          <NavLink className="navbar-brand text-white-50" to="/">Subscriptions</NavLink>
+        }
+        <NavLink className="navbar-brand text-white-50" to="/about">About</NavLink>
+        <NavLink className="navbar-brand text-white-50" to="/contact">Contact</NavLink>
       </nav>
     </header>
   );
