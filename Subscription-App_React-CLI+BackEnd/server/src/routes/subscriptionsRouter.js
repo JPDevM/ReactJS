@@ -27,9 +27,9 @@ router.get('/:id', controller.read);
 router.get('/active', controller.active);
 
 // inActive. 
-router.get('/active', controller.inactive);
+router.get('/inactive', controller.inactive);
 
 // Popular
-router.get('/active', controller.popular);
+router.get('/popular', controller.popular);
 
 module.exports = router;
