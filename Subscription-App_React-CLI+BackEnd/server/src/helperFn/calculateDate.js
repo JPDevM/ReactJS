@@ -33,12 +33,14 @@ module.exports = {
     await x("2020-05-11", "2021-08-28");
     if (startDate && endDate) {
       // Configs
-      let startDateFinal = moment(startDate).format('YYYY-MM-DD');
-      let endDateFinal = moment(endDate).format('YYYY-MM-DD');
-      
-      moment.defaultFormat = 'DD MMM';
+      moment.defaultFormat = 'DD MMM YYYY';
       moment.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+      
+      let startDateFinal = moment(startDate).format(moment.defaultFormat);
+      let endDateFinal = moment(endDate).format(moment.defaultFormat);
 
+      console.log(startDateFinal);
+     
       // Setters
       switch (recurrencyFromDB) {
         // Create a recurrence
@@ -46,17 +48,17 @@ module.exports = {
           var recurrence = await moment().recur(startDateFinal, endDateFinal).every(1).month();
           break;
 
-        // case 'bimonthly':
-        //   var recurrence = moment(starDate).recur(endDate).every(3).days();
-        //   break;
+        case 'bimonthly':
+          var recurrence = moment(starDate).recur(endDate).every(2).months();
+          break;
 
-        // case 'weekly':
-        //   var recurrence = moment(starDate).recur(endDate).every(1).weeks();
-        //   break;
+        case 'weekly':
+          var recurrence = moment(starDate).recur(endDate).every(1).weeks();
+          break;
 
-        // case 'yearly':
-        //   var recurrence = moment(starDate).recur(endDate).every(1).years();
-        //   break;
+        case 'yearly':
+          var recurrence = moment(starDate).recur(endDate).every(1).years();
+          break;
       }
 
       const allDates = await recurrence.all('DD MMM');

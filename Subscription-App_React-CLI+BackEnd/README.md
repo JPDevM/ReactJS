@@ -100,7 +100,8 @@ $ npm i
 - [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
 - [ ] Update components with props.
 - [ ] Sass: variables.
-- [ ] Sass: Media Queries Schema
+- [ ] Sass: Media Queries Schema.  <meta name="color-scheme" content="dark light"> and use @media(prefers-color-scheme: dark) or @media(prefers-color-scheme: light)
+- [ ] CSS Grid Layout in list.
 - [x] Install React.JS
 - [x] Clear react.
 - [x] Install Dependencies.

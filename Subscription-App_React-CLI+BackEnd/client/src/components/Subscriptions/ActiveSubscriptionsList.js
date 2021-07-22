@@ -11,9 +11,8 @@ const ActiveSubscriptionsList = (props) => {
     logo,
     color,
     nextPaymentDates,
-    previousPaymentDates,
   } = activeSubscription;
-  const { mainColor, secondColor, darkColor, lightColor } = color;
+  const { mainColor } = color;
 
   // listado de subscripciones
   return (

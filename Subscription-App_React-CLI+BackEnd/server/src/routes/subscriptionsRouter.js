@@ -22,4 +22,14 @@ router.get('/search', controller.search);
 // READ - See one ('.../:id')
 router.get('/:id', controller.read);
 
+
+// Active, order by date desc. 
+router.get('/active', controller.active);
+
+// inActive. 
+router.get('/active', controller.inactive);
+
+// Popular
+router.get('/active', controller.popular);
+
 module.exports = router;

@@ -30,20 +30,22 @@ module.exports = {
         let { firstPayment, recurrency, longDate } = subscriptionEdited;
         // let recurrency = subscriptionEdited.recurrency;
         // let longDate = subscriptionEdited.longDate;
-        
-        subscriptionEdited.allDates = firstPayment ? await setPaymentDates(firstPayment, recurrency, longDate) : null;
-        
+
+        subscriptionEdited.allDates = firstPayment
+          ? await setPaymentDates(firstPayment, recurrency, longDate)
+          : null;
+
         // subscriptionEdited.nextPaymentDates = firstPayment
         //   ? setPaymentDates(firstPayment, recurrency, longDate)
         //   : null;
         // subscriptionEdited.previousPaymentDates = longDate
         //   ? setPaymentDates(firstPayment, recurrency, longDate, 'prev')
         //   : null;
-        
+
         finalSubscriptions = [...finalSubscriptions, subscriptionEdited];
-        break
+        break;
       }
-      
+
       return response.json(finalSubscriptions);
       // return response.json({
       //   metadata: {
@@ -204,6 +206,94 @@ module.exports = {
           message: 'Success',
         },
         data: oneSubscription,
+      });
+    } catch (error) {
+      // Fail
+      return response.status(500).json({
+        metadata: {
+          status: 500,
+          message: 'Could not list from database.',
+          reason: error,
+        },
+      });
+    }
+  },
+
+  // Active, order by date desc.
+
+  active: async (request, response) => {
+    try {
+      const activeSubscription = await subscription.findAll({
+        where: {
+          isActive: '1', // Filter by active
+        },
+        order: [
+          ['firstPayment', 'ASC'], // Sorts by firstPayment in ascending order
+        ],
+        include: ['color'],
+      });
+      // Success
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: activeSubscription,
+      });
+    } catch (error) {
+      // Fail
+      return response.status(500).json({
+        metadata: {
+          status: 500,
+          message: 'Could not list from database.',
+          reason: error,
+        },
+      });
+    }
+  },
+
+  // inActive.
+  inactive: async (request, response) => {
+    try {
+      const inActiveSubscription = await subscription.findAll({
+        where: {
+          isActive: '0', // Filter by active
+        },
+        include: ['color'],
+      });
+      // Success
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: inActiveSubscription,
+      });
+    } catch (error) {
+      // Fail
+      return response.status(500).json({
+        metadata: {
+          status: 500,
+          message: 'Could not list from database.',
+          reason: error,
+        },
+      });
+    }
+  },
+
+  // Popular
+  popular: async (request, response) => {
+    try {
+      const popularSubscription = await subscription.findAll({
+        include: ['color'],
+      });
+      // Success
+      return response.json({
+        metadata: {
+          status: 200,
+          message: 'Success',
+        },
+        data: popularSubscription,
       });
     } catch (error) {
       // Fail
