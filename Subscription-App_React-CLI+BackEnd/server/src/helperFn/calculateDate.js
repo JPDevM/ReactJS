@@ -30,7 +30,6 @@ module.exports = {
     type = 'next',
     count = 1
   ) => {
-    await x("2020-05-11", "2021-08-28");
     if (startDate && endDate) {
       // Configs
       moment.defaultFormat = 'DD MMM YYYY';
@@ -38,8 +37,6 @@ module.exports = {
       
       let startDateFinal = moment(startDate).format(moment.defaultFormat);
       let endDateFinal = moment(endDate).format(moment.defaultFormat);
-
-      console.log(startDateFinal);
      
       // Setters
       switch (recurrencyFromDB) {

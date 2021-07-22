@@ -43,7 +43,6 @@ module.exports = {
         //   : null;
 
         finalSubscriptions = [...finalSubscriptions, subscriptionEdited];
-        break;
       }
 
       return response.json(finalSubscriptions);
@@ -285,6 +284,9 @@ module.exports = {
   popular: async (request, response) => {
     try {
       const popularSubscription = await subscription.findAll({
+        where: {
+          isPopular: '1', // Filter by popular
+        },
         include: ['color'],
       });
       // Success

@@ -4,59 +4,59 @@ import './_emptySubscriptionsList.scss';
 const EmptySubscriptionsList = () => {
   return (
     <Fragment>
-      <div class="timeline-item my-1">
-        <div class="animated-background">
-          <div class="background-masker header-top"></div>
-          <div class="background-masker header-left"></div>
-          <div class="background-masker header-right"></div>
-          <div class="background-masker header-bottom"></div>
-          <div class="background-masker subheader-left"></div>
-          <div class="background-masker subheader-right"></div>
-          <div class="background-masker subheader-bottom"></div>
+      <div className="timeline-item my-1">
+        <div className="animated-background">
+          <div className="background-masker header-top"></div>
+          <div className="background-masker header-left"></div>
+          <div className="background-masker header-right"></div>
+          <div className="background-masker header-bottom"></div>
+          <div className="background-masker subheader-left"></div>
+          <div className="background-masker subheader-right"></div>
+          <div className="background-masker subheader-bottom"></div>
         </div>
       </div>
-      <div class="timeline-item my-1">
-        <div class="animated-background">
-          <div class="background-masker header-top"></div>
-          <div class="background-masker header-left"></div>
-          <div class="background-masker header-right"></div>
-          <div class="background-masker header-bottom"></div>
-          <div class="background-masker subheader-left"></div>
-          <div class="background-masker subheader-right"></div>
-          <div class="background-masker subheader-bottom"></div>
+      <div className="timeline-item my-1">
+        <div className="animated-background">
+          <div className="background-masker header-top"></div>
+          <div className="background-masker header-left"></div>
+          <div className="background-masker header-right"></div>
+          <div className="background-masker header-bottom"></div>
+          <div className="background-masker subheader-left"></div>
+          <div className="background-masker subheader-right"></div>
+          <div className="background-masker subheader-bottom"></div>
         </div>
       </div>
-      <div class="timeline-item my-1">
-        <div class="animated-background">
-          <div class="background-masker header-top"></div>
-          <div class="background-masker header-left"></div>
-          <div class="background-masker header-right"></div>
-          <div class="background-masker header-bottom"></div>
-          <div class="background-masker subheader-left"></div>
-          <div class="background-masker subheader-right"></div>
-          <div class="background-masker subheader-bottom"></div>
+      <div className="timeline-item my-1">
+        <div className="animated-background">
+          <div className="background-masker header-top"></div>
+          <div className="background-masker header-left"></div>
+          <div className="background-masker header-right"></div>
+          <div className="background-masker header-bottom"></div>
+          <div className="background-masker subheader-left"></div>
+          <div className="background-masker subheader-right"></div>
+          <div className="background-masker subheader-bottom"></div>
         </div>
       </div>
-      <div class="timeline-item my-1">
-        <div class="animated-background">
-          <div class="background-masker header-top"></div>
-          <div class="background-masker header-left"></div>
-          <div class="background-masker header-right"></div>
-          <div class="background-masker header-bottom"></div>
-          <div class="background-masker subheader-left"></div>
-          <div class="background-masker subheader-right"></div>
-          <div class="background-masker subheader-bottom"></div>
+      <div className="timeline-item my-1">
+        <div className="animated-background">
+          <div className="background-masker header-top"></div>
+          <div className="background-masker header-left"></div>
+          <div className="background-masker header-right"></div>
+          <div className="background-masker header-bottom"></div>
+          <div className="background-masker subheader-left"></div>
+          <div className="background-masker subheader-right"></div>
+          <div className="background-masker subheader-bottom"></div>
         </div>
       </div>
-      <div class="timeline-item my-1">
-        <div class="animated-background">
-          <div class="background-masker header-top"></div>
-          <div class="background-masker header-left"></div>
-          <div class="background-masker header-right"></div>
-          <div class="background-masker header-bottom"></div>
-          <div class="background-masker subheader-left"></div>
-          <div class="background-masker subheader-right"></div>
-          <div class="background-masker subheader-bottom"></div>
+      <div className="timeline-item my-1">
+        <div className="animated-background">
+          <div className="background-masker header-top"></div>
+          <div className="background-masker header-left"></div>
+          <div className="background-masker header-right"></div>
+          <div className="background-masker header-bottom"></div>
+          <div className="background-masker subheader-left"></div>
+          <div className="background-masker subheader-right"></div>
+          <div className="background-masker subheader-bottom"></div>
         </div>
       </div>
     </Fragment>
