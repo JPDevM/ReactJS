@@ -1,6 +1,8 @@
+// Dependences
 import React, { Fragment, useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+// CSS
 import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
@@ -10,6 +12,7 @@ import Footer from './components/Footer';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
 import EmptySubscriptionsList from './components/Subscriptions/EmptySubscriptionsList';
 import LandingPage from './pages/landing/index';
+import Setting from './pages/settings/index';
 
 function App() {
   const [subscription, setSubscriptions] = useState(null);
@@ -73,7 +76,7 @@ function App() {
 
         {/* Setting Page */}
         <Route path="/setting" exact>
-          <p>setting page</p>
+          <Setting />
         </Route>
       </Switch>
     </Fragment>

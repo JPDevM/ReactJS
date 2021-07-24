@@ -1,6 +1,13 @@
+// CSS
+import './_landing.scss';
+
+// Resources
+import Logo from '../../assets/img/logo/logo_lg.png';
+
+// Components
 import Carousel from './carousel';
 
-const LandingPage = () => {
+export const LandingPage = () => {
 
   return (
   <div id="body-landing">
@@ -21,7 +28,7 @@ const LandingPage = () => {
     {/* Logo */}
     <section>
       <div className="logo">
-        <img className="img-fluid" src="/img/logo/logo_lg.png" alt="subscription app logo" />
+        <img className="img-fluid" src={ Logo } alt="subscription app logo" />
       </div>
     </section>
 
@@ -29,7 +36,6 @@ const LandingPage = () => {
     <Carousel />
 
   </div>)
-}
+};
 
-export default LandingPage
-
+export default LandingPage;
