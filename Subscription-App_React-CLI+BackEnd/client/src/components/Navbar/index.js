@@ -2,21 +2,34 @@ import { NavLink } from 'react-router-dom';
 
 import './_navbar.scss';
 
-const Navbar = props => {
-  let location = props.history.location.pathname;
-  console.log('Navbar Component');
-  console.log(location);
+const Navbar = (props) => {
+
+ var { location } = props; 
 
   return (
     <header>
       <nav className="navbar navbar-dark bg-dark">
-        { 
-          location === '/' ? 
-          <NavLink className="navbar-brand text-white-50" to="/">Home</NavLink> :
-          <NavLink className="navbar-brand text-white-50" to="/">Subscriptions</NavLink>
-        }
-        <NavLink className="navbar-brand text-white-50" to="/about">About</NavLink>
-        <NavLink className="navbar-brand text-white-50" to="/contact">Contact</NavLink>
+
+        
+        {/* Left NavBar */}
+        {location === '/' ? (
+          <NavLink className="navbar-brand text-white-50" to="/">
+            Home
+          </NavLink>
+        ) : (
+          <NavLink className="navbar-brand text-white-50" to="/">
+            Subscriptions
+          </NavLink>
+        )}
+
+        {/* Landing Page */}
+        <NavLink className="navbar-brand text-white-50" to="/landing">
+          Landing Page from Nabvar
+        </NavLink>
+
+        <NavLink className="navbar-brand text-white-50" to="/contact">
+          Contact
+        </NavLink>
       </nav>
     </header>
   );

@@ -1,3 +1,5 @@
+import Carousel from './carousel';
+
 const LandingPage = () => {
 
   return (
@@ -24,14 +26,7 @@ const LandingPage = () => {
     </section>
 
     {/* Carousel */}
-    <% let slideData_1={ imgUrl: "/img/landingPage/corousel-1.png" ,
-      title: "Manage all your subscriptions in one easy space." , subtitle: null }; let slideData_2={
-      imgUrl: "/img/landingPage/corousel-2.png" ,
-      title: "Subtítulo The best financial assistant for your subscriptions." , subtitle: null }; let slideData_3={
-      imgUrl: "/img/landingPage/corousel-3.png" , title: "Keep track of your subscriptions" ,
-      subtitle: "Get insights in your fixed." }; %>
-
-      <%- include('landing/carousel', {slideData_1, slideData_2, slideData_3}) %>
+    <Carousel />
 
   </div>)
 }
