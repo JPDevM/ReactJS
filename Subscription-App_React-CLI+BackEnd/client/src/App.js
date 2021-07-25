@@ -10,26 +10,21 @@ import './assets/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ActiveList from './components/Subscriptions';
+import PopularList from './components/Subscriptions/PopularList';
 
 // Pages
 import LandingPage from './pages/landing';
 import Setting from './pages/settings';
 
 function App() {
-  // Saco el fetch de acá
 
   return (
     <Fragment>
       <Switch>
         {/* Main Page */}
         <Route path="/" exact>
-          {/* NavBar */}
           <Navbar location={'/'} />
-
-          {/* Your Subscriptions */}
           <ActiveList />
-
-          {/* Footer */}
           <Footer amount={'32,50'} />
         </Route>
 
@@ -40,7 +35,16 @@ function App() {
 
         {/* Setting Page */}
         <Route path="/setting" exact>
+          <Navbar location={'/setting'} />
           <Setting />
+          <Footer amount={'32,50'} />
+        </Route>
+
+        {/* Add custom & Popular */}
+        <Route path="/popular" exact>
+          <Navbar location={'/popular'} />
+          <PopularList />
+          <Footer amount={'32,50'} />
         </Route>
       </Switch>
     </Fragment>

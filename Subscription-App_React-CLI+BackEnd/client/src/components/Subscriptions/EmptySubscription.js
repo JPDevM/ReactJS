@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react';
 
 // Styles
+import './_empty.scss';
 
 const EmptySubscription = () => {
   return (

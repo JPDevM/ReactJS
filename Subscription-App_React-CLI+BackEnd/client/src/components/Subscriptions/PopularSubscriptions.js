@@ -1,8 +1,10 @@
+// Dependencies
 import React, { Fragment } from 'react';
-import './_activeSubscriptionsList.scss';
 
-const PopularSubscriptionsList = (props) => {
-  const { popularSubscription } = props;
+// Styles
+import './_popular.scss';
+
+const PopularSubscriptions = ({ dataDB }) => {
   const {
     name,
     description,
@@ -11,8 +13,8 @@ const PopularSubscriptionsList = (props) => {
     logo,
     color,
     nextPaymentDates,
-  } = popularSubscription;
-  const { mainColor } = color;
+  } = dataDB;
+  const { mainColor, secondColor } = color;
 
   // listado de subscripciones
   return (
@@ -73,4 +75,4 @@ const PopularSubscriptionsList = (props) => {
   );
 };
 
-export default PopularSubscriptionsList;
+export default PopularSubscriptions;

@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 
 // Styles
-import './_activeSubscription.scss';
+import './_active.scss';
 
 const ActiveSubscription = ({ dataDB }) => {
   const {

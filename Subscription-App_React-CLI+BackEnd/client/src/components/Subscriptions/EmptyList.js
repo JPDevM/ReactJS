@@ -4,9 +4,6 @@ import React, { Fragment } from 'react';
 // Components
 import EmptySubscrition from './EmptySubscription';
 
-// Styles
-import './_emptySubscriptionsList.scss';
-
 const EmptySubscriptionsList = () => {
   return (
     <Fragment>
