@@ -8,7 +8,7 @@ In server folder, create a `.env` file and copy the content from `.env.example`.
 
 #### Things for the server
 
-Install node dependences.
+Install node Dependencies.
 
 ```shell
 $ cd server
@@ -28,7 +28,7 @@ Create database.
 $ npm run dbStart
 ```
 
-Install React dependences.
+Install React Dependencies.
 
 ```shell
 $ cd ../../client
@@ -74,12 +74,15 @@ $ npm i
 ![db_schema](../Images_docs/db_schema.png)
 
 #### Desing.
-> FAVICON this icon was only an inspiration. 
+
+> FAVICON this icon was only an inspiration.
 
 ![favicon](../Images_docs/favico.png)
 
 ### TO-DOs
+
 > Server
+
 - [ ] Seeders: Insert initial colors in db from Json.
 - [ ] Seeders: Insert initial brands in db from Json.
 - [ ] REST-API: Validate incoming data for Subscription method (edit, create, delete).
@@ -89,18 +92,17 @@ $ npm i
 - [ ] REST-API: Resolve the ActiveSubscription from a new method of controller. Ordered with dates, separate withd monthz
       Ej.: ActiveSubscription[CurrentMonth {}, NextMonth {}, ]
 
-
 > Client
+
 - [-] Component NavBar.
 - [ ] Sass: variables.
-- [ ] Sass: Media Queries Schema.  <meta name="color-scheme" content="dark light"> and use @media(prefers-color-scheme: dark) or @media(prefers-color-scheme: light)
+- [ ] Sass: Media Queries Schema. <meta name="color-scheme" content="dark light"> and use @media(prefers-color-scheme: dark) or @media(prefers-color-scheme: light)
 - [ ] CSS Grid Layout in list.
 - [ ] Update components with props.
 - [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
 - [-] Setting Page.
 - [-] Landig Page.
 - [ ] Add custom Page.
-
 
 ### Author
 

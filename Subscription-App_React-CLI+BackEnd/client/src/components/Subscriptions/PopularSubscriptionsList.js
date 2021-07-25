@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import './_activeSubscriptionsList.scss';
 
-const ActiveSubscriptionsList = (props) => {
-  const { activeSubscription } = props;
+const PopularSubscriptionsList = (props) => {
+  const { popularSubscription } = props;
   const {
     name,
     description,
@@ -11,7 +11,7 @@ const ActiveSubscriptionsList = (props) => {
     logo,
     color,
     nextPaymentDates,
-  } = activeSubscription;
+  } = popularSubscription;
   const { mainColor } = color;
 
   // listado de subscripciones
@@ -73,4 +73,4 @@ const ActiveSubscriptionsList = (props) => {
   );
 };
 
-export default ActiveSubscriptionsList;
+export default PopularSubscriptionsList;

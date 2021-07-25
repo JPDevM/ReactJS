@@ -1,7 +1,7 @@
-// Dependences
+// Dependencies
 import React, { Fragment } from 'react';
 
-// CSS
+// Styles
 import './_mainSetting.scss';
 
 // Components
@@ -15,7 +15,6 @@ import Information from './information.js';
 const setting = () => {
   return (
     <Fragment>
-      
       <Navbar location={'/setting'} />
 
       <main className="bg-dark">
