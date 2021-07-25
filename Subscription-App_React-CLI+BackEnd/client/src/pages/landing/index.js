@@ -1,4 +1,13 @@
-const LandingPage = () => {
+// CSS
+import './_landing.scss';
+
+// Resources
+import Logo from '../../assets/img/logo/logo_lg.png';
+
+// Components
+import Carousel from './carousel';
+
+export const LandingPage = () => {
 
   return (
   <div id="body-landing">
@@ -19,22 +28,14 @@ const LandingPage = () => {
     {/* Logo */}
     <section>
       <div className="logo">
-        <img className="img-fluid" src="/img/logo/logo_lg.png" alt="subscription app logo" />
+        <img className="img-fluid" src={ Logo } alt="subscription app logo" />
       </div>
     </section>
 
     {/* Carousel */}
-    <% let slideData_1={ imgUrl: "/img/landingPage/corousel-1.png" ,
-      title: "Manage all your subscriptions in one easy space." , subtitle: null }; let slideData_2={
-      imgUrl: "/img/landingPage/corousel-2.png" ,
-      title: "Subtítulo The best financial assistant for your subscriptions." , subtitle: null }; let slideData_3={
-      imgUrl: "/img/landingPage/corousel-3.png" , title: "Keep track of your subscriptions" ,
-      subtitle: "Get insights in your fixed." }; %>
-
-      <%- include('landing/carousel', {slideData_1, slideData_2, slideData_3}) %>
+    <Carousel />
 
   </div>)
-}
+};
 
-export default LandingPage
-
+export default LandingPage;

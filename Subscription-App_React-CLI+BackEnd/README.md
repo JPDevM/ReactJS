@@ -97,11 +97,15 @@ $ npm i
 - [X] REST-API: Use the colors, create relations between tables.
 
 > Client
-- [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
-- [ ] Update components with props.
+- [-] Component NavBar.
 - [ ] Sass: variables.
 - [ ] Sass: Media Queries Schema.  <meta name="color-scheme" content="dark light"> and use @media(prefers-color-scheme: dark) or @media(prefers-color-scheme: light)
 - [ ] CSS Grid Layout in list.
+- [ ] Update components with props.
+- [ ] Get brands of his website. https://www.npmjs.com/package/parse-favicon
+- [-] Setting Page.
+- [-] Landig Page.
+- [ ] Add custom Page.
 - [x] Install React.JS
 - [x] Clear react.
 - [x] Install Dependencies.

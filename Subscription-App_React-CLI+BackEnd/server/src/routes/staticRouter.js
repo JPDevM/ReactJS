@@ -7,7 +7,7 @@ router.get('/', function (request, response) {
   response.send('landing');
 });
 
-router.get('/docs', function (request, response) {
+router.get('/documentation', function (request, response) {
   response.send('The docs page works ok');
 });
 

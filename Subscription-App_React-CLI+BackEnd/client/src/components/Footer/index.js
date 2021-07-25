@@ -1,6 +1,8 @@
 import './_footer.scss';
 
-const Footer = () => {
+const Footer = (props) => {
+  const { amount } = props;
+
   return (
     <footer>
       <div className="row fixed-bottom bg-dark mx-0 pb-4">
@@ -20,12 +22,14 @@ const Footer = () => {
         </div>
         <div className="col">
           <p className="text-right text-white my-0 text-truncate">
-            <strong>279,90 €</strong>
+            <strong>
+              {!amount && '0,00'} 
+              {amount} €</strong>
           </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;

@@ -1,6 +1,8 @@
+// Dependences
 import React, { Fragment, useState, useEffect } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
+// CSS
 import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
@@ -9,81 +11,76 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
 import EmptySubscriptionsList from './components/Subscriptions/EmptySubscriptionsList';
-
-const About = ({text}) => <h2>Soy la sección ABOUT: {text}</h2>;
-
-const Contact = (props) => <h6>Llegaste a la sección CONTACT</h6>;
+import LandingPage from './pages/landing/index';
+import Setting from './pages/settings/index';
 
 function App() {
   const [subscription, setSubscriptions] = useState(null);
-
-	let history = useHistory();
+  const [amount, setAmount] = useState(null);
 
   useEffect(() => {
     const url = 'http://localhost:5000/subscriptions';
 
-    // fetch subscriptions from the API when component mounts
-   //  const fetchSubscriptions = async () => {
-   //    try {
-   //      const response = await fetch(url);
-   //      const data = await response.json();
+    // Fetch subscriptions from the API when component mounts
+    const fetchSubscriptions = async () => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
 
-   //      let activeSubscriptions = data.data.filter(
-   //        (oneSub) => oneSub.isActive === 1
-   //      );
+        let activeSubscriptions = data.data;
+        let amount = activeSubscriptions.reduce((acum, sub) => {
+          return acum + Number(sub.price);
+        }, 0);
+        console.log(amount.toFixed(2));
+        console.log(activeSubscriptions);
 
-   //      let totalSubscriptions = activeSubscriptions.reduce((acum, sub) => {
-   //        return acum + Number(sub.price)
-   //      }, 0)
-   //      console.log(totalSubscriptions.toFixed(2));
+        setSubscriptions(activeSubscriptions);
+        setAmount(amount);
+      } catch (error) {
+        console.log('error', error);
+      }
+    };
 
-   //      let inActiveSubscriptions = data.data.filter(
-   //        (oneSub) => oneSub.isActive === 0
-   //      );
-   //      // console.log(inActiveSubscriptions);
-
-   //      setSubscriptions({
-   //        active: activeSubscriptions,
-   //        inActive: inActiveSubscriptions,
-   //      });
-   //    } catch (error) {
-   //      console.log('error', error);
-   //    }
-   //  };
-
-   //  fetchSubscriptions();
+    fetchSubscriptions();
   }, []);
 
-	return (
-		<Fragment>
-			<Navbar activeSection={'/'} history={history} />
-			
-			<Switch>
+  return (
+    <Fragment>
+      <Switch>
+        {/* Main Page */}
+        <Route path="/" exact>
+          {/* NavBar */}
+          <Navbar location={'/'} />
 
-				<Route path='/' exact>
-					{!subscription && <EmptySubscriptionsList />}
+          {/* Active subscriptions */}
+          {!subscription && <EmptySubscriptionsList />}
+          {subscription && (
+            <>
+              {subscription.active.map((subscription, index) => (
+                <ActiveSubscriptionsList
+                  key={index}
+                  activeSubscription={subscription}
+                />
+              ))}
+            </>
+          )}
 
-					{/* Active subscriptions */}
-					{subscription && (
-						<>
-							{subscription.active.map((subscription, index) => (
-								<ActiveSubscriptionsList
-									key={index}
-									activeSubscription={subscription}
-								/>
-							))}
-						</>
-					)}
-				</Route>
-				
-				<Route path='/about' render={ () => <About text='Saludos a todos' /> } />
-				
-				<Route path='/contact' component={Contact} />
-			</Switch>
+          {/* Footer */}
+          <Footer amount={amount} />
+        </Route>
 
-			<Footer />
-		</Fragment>
-	);
+        {/* Landing Page */}
+        <Route path="/landing" exact>
+          <LandingPage />
+        </Route>
+
+        {/* Setting Page */}
+        <Route path="/setting" exact>
+          <Setting />
+        </Route>
+      </Switch>
+    </Fragment>
+  );
 }
 
 export default App;
