@@ -1,5 +1,5 @@
-// Dependences
-import React, { Fragment } from 'react'
+// Dependencies
+import React, { Fragment } from 'react';
 
 const preferences = () => {
   return (
@@ -60,6 +60,6 @@ const preferences = () => {
       </div>
     </Fragment>
   );
-}
+};
 
-export default preferences
+export default preferences;

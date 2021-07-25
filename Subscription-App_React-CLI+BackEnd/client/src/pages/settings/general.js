@@ -1,5 +1,5 @@
-// Dependences
-import React, { Fragment } from 'react'
+// Dependencies
+import React, { Fragment } from 'react';
 
 const general = () => {
   return (
@@ -53,6 +53,6 @@ const general = () => {
       </div>
     </Fragment>
   );
-}
+};
 
-export default general
+export default general;

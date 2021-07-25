@@ -1,4 +1,4 @@
-// Dependences
+// Dependencies
 import React, { Fragment } from 'react';
 
 const updates = () => {

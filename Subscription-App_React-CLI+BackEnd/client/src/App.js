@@ -1,72 +1,31 @@
-// Dependences
-import React, { Fragment, useState, useEffect } from 'react';
+// Dependencies
+import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-// CSS
+// Styles
 import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ActiveSubscriptionsList from './components/Subscriptions/ActiveSubscriptionsList';
-import EmptySubscriptionsList from './components/Subscriptions/EmptySubscriptionsList';
-import LandingPage from './pages/landing/index';
-import Setting from './pages/settings/index';
+import ActiveList from './components/Subscriptions';
+import PopularList from './components/Subscriptions/PopularList';
+
+// Pages
+import LandingPage from './pages/landing';
+import Setting from './pages/settings';
 
 function App() {
-  const [subscription, setSubscriptions] = useState(null);
-  const [amount, setAmount] = useState(null);
-
-  useEffect(() => {
-    const url = 'http://localhost:5000/subscriptions';
-
-    // Fetch subscriptions from the API when component mounts
-    const fetchSubscriptions = async () => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        let activeSubscriptions = data.data;
-        let amount = activeSubscriptions.reduce((acum, sub) => {
-          return acum + Number(sub.price);
-        }, 0);
-        console.log(amount.toFixed(2));
-        console.log(activeSubscriptions);
-
-        setSubscriptions(activeSubscriptions);
-        setAmount(amount);
-      } catch (error) {
-        console.log('error', error);
-      }
-    };
-
-    fetchSubscriptions();
-  }, []);
 
   return (
     <Fragment>
       <Switch>
         {/* Main Page */}
         <Route path="/" exact>
-          {/* NavBar */}
           <Navbar location={'/'} />
-
-          {/* Active subscriptions */}
-          {!subscription && <EmptySubscriptionsList />}
-          {subscription && (
-            <>
-              {subscription.active.map((subscription, index) => (
-                <ActiveSubscriptionsList
-                  key={index}
-                  activeSubscription={subscription}
-                />
-              ))}
-            </>
-          )}
-
-          {/* Footer */}
-          <Footer amount={amount} />
+          <ActiveList />
+          <Footer amount={'32,50'} />
         </Route>
 
         {/* Landing Page */}
@@ -76,7 +35,16 @@ function App() {
 
         {/* Setting Page */}
         <Route path="/setting" exact>
+          <Navbar location={'/setting'} />
           <Setting />
+          <Footer amount={'32,50'} />
+        </Route>
+
+        {/* Add custom & Popular */}
+        <Route path="/popular" exact>
+          <Navbar location={'/popular'} />
+          <PopularList />
+          <Footer amount={'32,50'} />
         </Route>
       </Switch>
     </Fragment>
