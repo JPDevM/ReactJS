@@ -88,13 +88,7 @@ $ npm i
 - [ ] REST-API: Do the mockups.
 - [ ] REST-API: Resolve the ActiveSubscription from a new method of controller. Ordered with dates, separate withd monthz
       Ej.: ActiveSubscription[CurrentMonth {}, NextMonth {}, ]
-- [x] Create Sass script.
-- [x] Install React.
-- [x] Create a Bitbuket Readme for the workflow.
-- [x] Implemen git flow.
-- [x] REST-API: Subscription methods.
-- [x] REST-API: Promotions methods.
-- [X] REST-API: Use the colors, create relations between tables.
+
 
 > Client
 - [-] Component NavBar.
@@ -106,15 +100,7 @@ $ npm i
 - [-] Setting Page.
 - [-] Landig Page.
 - [ ] Add custom Page.
-- [x] Install React.JS
-- [x] Clear react.
-- [x] Install Dependencies.
-- [x] Ceate a folder structure.
-- [x] Get main data from db using hooks.
-- [x] Create main components using arrow funtions.
-- [x] Create a loading componets.
-- [x] Implement Sass.
-- [X] set Favicon
+
 
 ### Author
 
