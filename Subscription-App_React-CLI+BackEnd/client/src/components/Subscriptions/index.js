@@ -3,7 +3,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 
 // Components
 import ActiveSubscriptions from './ActiveSubscription';
-import EmptySubscriptionsList from './EmptySubscriptionsList';
+import EmptyList from './EmptyList';
 
 const ActiveList = () => {
 
@@ -40,7 +40,7 @@ useEffect(() => {
   return (
     <Fragment>
       {/* Active subscriptions */}
-      {!subscription && <EmptySubscriptionsList />}
+      {!subscription && <EmptyList />}
       {subscription && (
         <>
           {subscription.map((subscription, index) => (
