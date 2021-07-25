@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<%- include('partials/head') %>
+import React, { Fragment } from 'react'
 
-  <body>
-    <header>
+const font = () => {
+  return (
+    <Fragment>
+          <header>
       <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand text-white-50" href="/setting">
           <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -11,9 +11,9 @@
         <span class="navbar-text text-white text-truncate">
           Theme
         </span>
-        <a style="opacity: 0%;">
+        {/* <a style="opacity: 0%;"> */}
           <i class="fa fa-heart" aria-hidden="true"></i>
-        </a>
+        {/* </a> */}
       </nav>
     </header>
 
@@ -22,11 +22,11 @@
         <div class="container-fluid">
           <div id="containerFonts" class="row border-setting-bottom">
 
-            <!-- Fonts -->
+            {/* Fonts */}
             <div class="col-12">
               <p class="text-white-50 mb-0 mt-4 text-uppercase"><small>Fonts</small></p>
             </div>
-            <!-- dynamic load from js -->
+            {/* dynamic load from js */}
           </div>
 
           <div id="divPreview">
@@ -34,11 +34,13 @@
           </div>
 
         </div>
-        </div>
       </section>
     </main>
+    </Fragment>
+  )
+}
 
-    <%- include('../partials/footer') %>
-  </body>
+export default font
 
-</html>
+
+
