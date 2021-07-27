@@ -8,7 +8,6 @@ const { subscription } = require('../database/models');
 
 // Helpers Functions
 const { setPaymentDates } = require('../helperFn/calculateDate');
-const { all } = require('../routes/staticRouter');
 
 // Developer dependencies
 const chalk = require('chalk');
@@ -173,6 +172,7 @@ module.exports = {
 
   // SEARCH - Find ('.../search')
   search: (request, response) => {
+    console.log(request.query);
     let token = Number(request.query.token);
     let word = request.query.name;
 

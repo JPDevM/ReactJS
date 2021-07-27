@@ -2,6 +2,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
 // Components
+import Layout from '../Layout';
 import ActiveSubscriptions from './ActiveSubscription';
 import EmptyList from './EmptyList';
 
@@ -38,7 +39,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <Fragment>
+    <Layout>
       {/* Active subscriptions */}
       {!subscription && <EmptyList />}
       {subscription && (
@@ -51,7 +52,7 @@ useEffect(() => {
           ))}
         </>
       )}
-    </Fragment>
+    </Layout>
   );
 }
 

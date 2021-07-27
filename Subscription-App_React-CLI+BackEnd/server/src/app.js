@@ -3,7 +3,6 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
-const methodOverride = require('method-override'); // To make PUT requests in Express.
 const session = require('express-session');
 const path = require('path');
 // Develop packages
@@ -48,11 +47,6 @@ app.use(
 // urlencoded and json are needed for POST and PUT requests to send data (objects) to the server that is included in the body (request.body).
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(methodOverride('_method'));
-
-// Entities and statics routes
-const staticRouter = require('./routes/staticRouter');
-app.use('/', staticRouter);
 
 const subscriptionsRouter = require('./routes/subscriptionsRouter');
 app.use('/subscriptions', subscriptionsRouter);
@@ -65,5 +59,8 @@ app.use('/users', usersRouter);
 
 app.get('*', function (request, response) {
   // 404 Not Found
-  response.send('404 - Not found');
+  response.status(404).json({
+    code: 404,
+    message: 'Bad request, end point not found'
+  });
 });

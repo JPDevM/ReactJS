@@ -1,9 +1,10 @@
 // Dependencies
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Components
 import PopularSubscriptions from './PopularSubscriptions';
 import EmptyList from './EmptyList';
+import Layout from '../Layout';
 
 const PopularList = () => {
   const [subscription, setSubscriptions] = useState(null);
@@ -30,7 +31,7 @@ const PopularList = () => {
   }, []);
 
   return (
-    <Fragment>
+    <Layout>
       {/* Popular subscriptions */}
       {!subscription && <EmptyList />}
       {subscription && (
@@ -40,7 +41,7 @@ const PopularList = () => {
           ))}
         </>
       )}
-    </Fragment>
+    </Layout>
   );
 };
 

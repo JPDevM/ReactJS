@@ -7,8 +7,6 @@ import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
 // Components
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import ActiveList from './components/Subscriptions';
 import PopularList from './components/Subscriptions/PopularList';
 
@@ -22,29 +20,19 @@ function App() {
     <Fragment>
       <Switch>
         {/* Main Page */}
-        <Route path="/" exact>
-          <Navbar location={'/'} />
-          <ActiveList />
-          <Footer amount={'32,50'} />
-        </Route>
+        <Route path="/" exact component={LandingPage} />
 
-        {/* Landing Page */}
-        <Route path="/landing" exact>
-          <LandingPage />
-        </Route>
+        {/* User Subscriptions */}
+        <Route path="/subscriptions" component={ActiveList} />
 
         {/* Setting Page */}
-        <Route path="/setting" exact>
-          <Navbar location={'/setting'} />
+        <Route path="/settings">
           <Setting />
-          <Footer amount={'32,50'} />
         </Route>
 
         {/* Add custom & Popular */}
-        <Route path="/popular" exact>
-          <Navbar location={'/popular'} />
+        <Route path="/popular">
           <PopularList />
-          <Footer amount={'32,50'} />
         </Route>
       </Switch>
     </Fragment>

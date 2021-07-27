@@ -24,18 +24,18 @@ const Carousel = () => {
 
   return (
     <Fragment>
-      <div id="carousel-Landing" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+      <div id="carousel-Landing" className="carousel slide" data-ride="carousel">
+        <div className="carousel-inner">
           <Slide data={slide_1} />
           <Slide data={slide_2} />
           <Slide data={slide_3} />
         </div>
 
-        <ol class="carousel-indicators">
+        <ol className="carousel-indicators">
           <li
             data-target="#carousel-Landing slide-one"
             data-slide-to="0"
-            class="active"
+            className="active"
           ></li>
           <li data-target="#carousel-Landing slide-two" data-slide-to="1"></li>
           <li
@@ -45,23 +45,23 @@ const Carousel = () => {
         </ol>
 
         <a
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           href="#carousel-Landing"
           role="button"
           data-slide="prev"
         >
-          <p class="carousel-control-prev-text"> Back </p>
-          <span class="sr-only"></span>
+          <p className="carousel-control-prev-text"> Back </p>
+          <span className="sr-only"></span>
         </a>
 
         <a
-          class="carousel-control-next"
+          className="carousel-control-next"
           href="#carousel-Landing"
           role="button"
           data-slide="next"
         >
-          <p class="carousel-control-next-text"> Next </p>{' '}
-          <span class="sr-only"></span>
+          <p className="carousel-control-next-text"> Next </p>{' '}
+          <span className="sr-only"></span>
         </a>
       </div>
 

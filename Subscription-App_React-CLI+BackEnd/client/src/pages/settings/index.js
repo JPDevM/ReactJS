@@ -1,22 +1,20 @@
 // Dependencies
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // Styles
 import './_mainSetting.scss';
 
 // Components
-import Navbar from '../../components/Navbar';
 import General from './general';
 import Preferences from './preferences';
 import Design from './design.js';
 import Updates from './updates.js';
 import Information from './information.js';
+import Layout from '../../components/Layout';
 
 const setting = () => {
   return (
-    <Fragment>
-      <Navbar location={'/setting'} />
-
+    <Layout footerAmount={123.56}>
       <main className="bg-dark">
         <section className="py-2">
           <div className="container-fluid">
@@ -34,9 +32,8 @@ const setting = () => {
           </div>
         </section>
       </main>
-
       {/* <%- include('../partials/footer') %> */}
-    </Fragment>
+    </Layout>
   );
 };
 
