@@ -1,59 +1,23 @@
 // Dependencies
-import React, { Fragment, useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 // Components
-import Layout from '../Layout';
-import ActiveSubscriptions from './ActiveSubscription';
-import EmptyList from './EmptyList';
+import Active from  './Active';
+import PopularList from './PopularList';
+import Detail from './Detail';
 
-const ActiveList = () => {
-
-const [subscription, setSubscriptions] = useState(null);
-// const [amount, setAmount] = useState(null);
-
-useEffect(() => {
-  const url = 'http://localhost:5000/subscriptions/active';
-
-  // Fetch subscriptions from the API when component mounts
-  const fetchSubscriptions = async () => {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-
-      let activeSubscriptions = data.data;
-      console.log(activeSubscriptions);
-
-      // let amount = activeSubscriptions.reduce((acum, sub) => {
-      //   return acum + Number(sub.price);
-      // }, 0);
-      // console.log(amount.toFixed(2));
-
-      setSubscriptions(activeSubscriptions);
-      // setAmount(amount);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
-
-  fetchSubscriptions();
-}, []);
-
+const index = () => {
   return (
-    <Layout>
-      {/* Active subscriptions */}
-      {!subscription && <EmptyList />}
-      {subscription && (
-        <>
-          {subscription.map((subscription, index) => (
-            <ActiveSubscriptions
-              key={index}
-              dataDB={subscription}
-            />
-          ))}
-        </>
-      )}
-    </Layout>
-  );
+    <Switch>
+      <Route exact path="/subscriptions" component={Active} />
+      
+      <Route path="/subscriptions/popular">
+        <PopularList />
+      </Route>
+
+      <Route path="/subscriptions/detail/:id" component={Detail} />
+    </Switch>
+  )
 }
 
-export default ActiveList;
+export default index;

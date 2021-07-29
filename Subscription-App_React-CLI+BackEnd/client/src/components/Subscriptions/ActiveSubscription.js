@@ -1,11 +1,13 @@
 // Dependencies
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './_active.scss';
 
 const ActiveSubscription = ({ dataDB }) => {
   const {
+    id,
     name,
     description,
     price,
@@ -25,8 +27,7 @@ const ActiveSubscription = ({ dataDB }) => {
           backgroundColor: mainColor ? mainColor : 'green',
         }}
       >
-        {/* <a  id="cardUser" 
-              href="/">  Routear a editar esta card */}
+        <Link id="cardUser" to={`/subscriptions/detail/${id}`}> 
         <div id="cardRow" className="row mx-0">
           <img
             src={logo}
@@ -69,7 +70,7 @@ const ActiveSubscription = ({ dataDB }) => {
             </div>
           </div>
         </div>
-        {/* </a> */}
+        </Link>
       </li>
     </Fragment>
   );

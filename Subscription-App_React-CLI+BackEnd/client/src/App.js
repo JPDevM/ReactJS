@@ -7,8 +7,7 @@ import './assets/css/app.scss';
 import './assets/css/bootstrap.min.css';
 
 // Components
-import ActiveList from './components/Subscriptions';
-import PopularList from './components/Subscriptions/PopularList';
+import Subscriptions from './components/Subscriptions';
 
 // Pages
 import LandingPage from './pages/landing';
@@ -23,16 +22,11 @@ function App() {
         <Route path="/" exact component={LandingPage} />
 
         {/* User Subscriptions */}
-        <Route path="/subscriptions" component={ActiveList} />
+        <Route path="/subscriptions" component={Subscriptions} />
 
         {/* Setting Page */}
         <Route path="/settings">
           <Setting />
-        </Route>
-
-        {/* Add custom & Popular */}
-        <Route path="/popular">
-          <PopularList />
         </Route>
       </Switch>
     </Fragment>

@@ -5,6 +5,7 @@ import React, { Fragment } from 'react';
 import Slide from './slide';
 
 const Carousel = () => {
+
   // Slide data
   const slide_1 = {
     imgUrl: '/img/landingPage/corousel-1.png',
@@ -79,4 +80,5 @@ const Carousel = () => {
     </Fragment>
   );
 };
+
 export default Carousel;
