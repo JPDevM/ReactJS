@@ -53,7 +53,7 @@ const Carousel = () => {
         >
           <p className="carousel-control-prev-text"> Back </p>
           <span className="sr-only"></span>
-        </a>
+        </a>              
 
         <a
           className="carousel-control-next"

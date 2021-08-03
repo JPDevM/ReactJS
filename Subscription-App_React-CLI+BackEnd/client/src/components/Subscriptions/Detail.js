@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 const Detail = (props) => {
 	const { id } = props.match.params; 
@@ -12,8 +12,6 @@ const Detail = (props) => {
 		}
 		getSubscription();
 	}, [id]);
-
-	console.log(subscription);
 	
 	// swal("Hello world!")
 	return (

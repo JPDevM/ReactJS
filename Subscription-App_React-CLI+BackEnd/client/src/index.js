@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/css/_index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById('root')
-);
+import './assets/css/_index.scss';
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 reportWebVitals();
 

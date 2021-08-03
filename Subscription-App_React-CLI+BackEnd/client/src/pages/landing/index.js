@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // Styles
 import './_landing.scss';
 
@@ -5,7 +7,7 @@ import './_landing.scss';
 import Logo from '../../assets/img/logo/logo_lg.png';
 
 // Components
-import Carousel from './carousel';
+import Carousel from './carouselV2';
 
 export const LandingPage = () => {
   return (
@@ -13,22 +15,20 @@ export const LandingPage = () => {
       {/* Menú */}
       <div className="container">
         <div className="row my-2">
-          <a
-            href="../users/login"
+          <Link
+            to="/users/login"
             className="btn btn-outline-primary mx-2 logInBtn align-self-center btn-lg w-100"
-            role="button"
           >
             Log In
-          </a>
+          </Link>
         </div>
         <div className="row my-2">
-          <a
-            href="../users/create"
+          <Link
+            to="/users/register"
             className="btn btn-outline-primary mx-2 SigInBtn align-self-center btn-lg w-100"
-            role="button"
           >
             Sign In
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -177,7 +177,7 @@ $colorPurple: #3200a0;
 .carousel-indicators {
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: 40px;
   left: 0;
   z-index: 15;
   display: flex;
@@ -185,11 +185,11 @@ $colorPurple: #3200a0;
   padding-left: 0; // override <ol> default
   list-style: none;
 
-  li {
+  [data-bs-target] {
     box-sizing: content-box;
     flex: 0 1 auto;
-    width: 3px;
-    height: 3px;
+    width: 30px;
+    height: 30px;
     text-indent: -999px;
     cursor: pointer;
     border-radius: 50%;

@@ -1,10 +1,9 @@
 // Dependencies
-import React, { Fragment } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Styles
 import './assets/css/app.scss';
-import './assets/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import Subscriptions from './components/Subscriptions';
@@ -16,7 +15,7 @@ import Setting from './pages/settings';
 function App() {
 
   return (
-    <Fragment>
+    <Router>
       <Switch>
         {/* Main Page */}
         <Route path="/" exact component={LandingPage} />
@@ -29,7 +28,7 @@ function App() {
           <Setting />
         </Route>
       </Switch>
-    </Fragment>
+    </Router>
   );
 }
 
