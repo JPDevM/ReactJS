@@ -14,6 +14,12 @@ Inspired by 👍 [ziadoz/awesome-php](https://github.com/ziadoz/awesome-php)
 - [Communities](#Communities)
 - [Wrapping Up](#Wrapping Up)
 
+## JPDevM Selections
+
+- [**json-server**](https://www.npmjs.com/package/json-server)
+
+  > Get a full fake REST API with **zero coding** in **less than 30 seconds** (seriously)
+
 ## Useful
 
 1. [React Rocks](https://react.rocks/)
@@ -47,10 +53,6 @@ Inspired by 👍 [ziadoz/awesome-php](https://github.com/ziadoz/awesome-php)
 9. [React JS Example](https://reactjsexample.com/)
 
 > Check out example React JS sites with their Github repo.
-
-## JPDevM Selections
-
-
 
 ## Repos
 
