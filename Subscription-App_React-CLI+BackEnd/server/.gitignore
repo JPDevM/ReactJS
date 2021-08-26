@@ -6,6 +6,8 @@
 node_modules
 */node_modules
 .env
+*.ini
+.ini
 
 # Icon must end with two \r
 Icon
